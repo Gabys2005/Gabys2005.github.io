@@ -1,14 +1,86 @@
 body {
-    background-color: rgb(23,23,23);
+    background-color: rgb(54,57,63);
     color: #FFFFFF;
-    font-family: "Helvetica", "Verdana"
+    font-family: "Helvetica", "Verdana";
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
-h1 {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
+.header {
     text-align: center;
-    font-size: 70px;
+}
+
+.projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.project {
+    width: 350px;
+    height: 250px;
+    border: 2px solid lightblue;
+    border-radius: 15px;
+    margin-right: 20px;
+}
+
+.luaproject {
+    border-color: lightblue;
+}
+
+.jsproject {
+    border-color: lightsalmon;
+}
+
+.projecttitle {
+   text-align: center;
+   color: lightblue; 
+}
+
+.projectdescription {
+    text-align: center;
+    color: white;
+    height: 100px;
+    width: 330px;
+}
+
+.dot {
+    border-radius: 45px;
+    width: 20px;
+    height: 20px;
+    margin-left: 30px;
+}
+
+.dottext {
+    margin-left: 30px;
+    font-size: 14px;
+}
+
+.inline {
+    display: inline;
+}
+
+.github {
+    margin-left: 170px;
+    margin-top: -20px;
+}
+
+.githubimg {
+    width: 20px;
+}
+
+.githublink {
+    margin-left: 10px;
+    font-size: 14px;
+    color: lightblue;
+    vertical-align: 5px;
+}
+
+.lua {
+    background-color: blue;
+}
+
+.js {
+    background-color: orange;
 }
