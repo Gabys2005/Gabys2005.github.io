@@ -9,6 +9,7 @@ body {
     background-color: rgb(54,57,63);
     padding-top: 15px;
     padding-bottom: 10px;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.2);
 }
 
 .header {
@@ -26,11 +27,13 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .project {
-    width: 350px;
-    height: 250px;
+    width: 500px;
+    height: 270px;
     border: 2px solid lightblue;
     border-radius: 15px;
     margin-right: 20px;
@@ -40,8 +43,16 @@ body {
     border-color: lightblue;
 }
 
+.luaproject h1 {
+    color: lightblue;
+}
+
 .jsproject {
     border-color: lightsalmon;
+}
+
+.jsproject h1 {
+    color: lightsalmon;
 }
 
 .projecttitle {
@@ -52,15 +63,17 @@ body {
 .projectdescription {
     text-align: center;
     color: white;
-    height: 100px;
-    width: 330px;
+    height: 80px;
+    width: 480px;
+    margin-left: 10px;
 }
 
 .dot {
-    border-radius: 45px;
-    width: 20px;
-    height: 20px;
-    margin-left: 30px;
+    border-radius: 8px;
+    height: 25px;
+    margin-left: 10px;
+    text-align: center;
+    line-height: 25px;
 }
 
 .dottext {
@@ -90,8 +103,84 @@ body {
 
 .lua {
     background-color: blue;
+    width: 50px;
 }
 
 .js {
     background-color: orange;
+    width: 100px;
+}
+
+.langs {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.websiteb {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(47,49,54);
+    width: 120px;
+    height: 40px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+    transition: 0.5s;    
+}
+
+.websiteb img {
+    width: 25px;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
+.websiteb div {
+    margin-left: 45px;
+    margin-top: -25px;
+}
+
+.websiteb:hover {
+    background-color: rgba(216, 231, 10, 0.76);
+}
+
+.githubb {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(47,49,54);
+    width: 120px;
+    height: 40px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+    transition: 0.5s;    
+}
+
+.githubb img {
+    width: 33px;
+    margin-top: 4px;
+    margin-left: 8px;
+}
+
+.githubb div {
+    margin-left: 55px;
+    margin-top: -28px;
+}
+
+.githubb:hover {
+    background-color: rgba(216, 231, 10, 0.76);
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.jsline {
+    border-color: lightsalmon;
+}
+
+.lualine {
+    border-color: lightblue;
 }
