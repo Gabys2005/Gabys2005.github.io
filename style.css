@@ -1,13 +1,24 @@
 body {
-    background-color: rgb(54,57,63);
+    background-color: rgb(32,34,37);
     color: #FFFFFF;
     font-family: "Helvetica", "Verdana";
-    margin-left: 50px;
-    margin-right: 50px;
+    margin: 0 0 0 0;
+}
+
+.headerback {
+    background-color: rgb(54,57,63);
+    padding-top: 15px;
+    padding-bottom: 10px;
 }
 
 .header {
     text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.dark {
+    background-color: rgb(32,34,37);
 }
 
 .projects {
