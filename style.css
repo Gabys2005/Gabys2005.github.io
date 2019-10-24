@@ -184,3 +184,34 @@ body {
 .lualine {
     border-color: lightblue;
 }
+
+.htmlproject {
+    border-color: lightcoral;
+}
+
+.htmlproject h1 {
+    color: lightcoral;
+}
+
+.htmlline {
+    border-color: lightcoral;
+}
+
+.html {
+    background-color: rgb(255, 74, 74);
+    width: 70px;
+}
+
+.css {
+    background-color: rgb(0, 128, 145);
+    width: 60px;
+}
+
+.node {
+    background-color: rgb(0, 145, 56);
+    width: 80px;
+}
+
+.hidden {
+    display: none;
+}
