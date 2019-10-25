@@ -96,7 +96,7 @@
 .langs {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 98%;
 }
 
 .websiteb {
@@ -230,7 +230,6 @@
     .project {
         width: 100%;
         height: 270px;
-        border: 2px solid lightblue;
         border-radius: 15px;
         margin-right: 20px;
         margin-bottom: 20px;     
