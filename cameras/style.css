@@ -5,68 +5,11 @@ body {
     margin: 0 0 0 0;
 }
 
-.headerback {
-    background-color: rgb(54,57,63);
-    padding-top: 15px;
-    padding-bottom: 10px;
-    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.2);
-}
-
-.middle {
-    text-align: center;
-}
-
-.backbutton {
-    color: white;
-    text-decoration: none;
-    background-color: rgb(47,49,54);
-    height: 40px;
-    width: 70px;
-    margin-left: 20px;
-    margin-top: 15px;
+h1 {
     position: absolute;
-    transition: 0.5s;
-}
-
-.backbutton div {
-    width: 70px;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
     text-align: center;
-    height: 100%;
-    text-decoration: none;
-    color: white;
-    text-decoration: none;
-    line-height: 40px;
-}
-
-.backbutton:hover {
-    background-color: rgba(216, 231, 10, 0.76);
-}
-
-.step {
-    border-color: white;
-    width: 700px;
-    border: 2px solid lightblue;
-    border-radius: 15px;
-    margin: 0 auto;
-}
-
-.step p {
-    font-size: 20px;
-}
-
-.download {
-    text-align: center;
-    color: white;
-    text-decoration: none;
-    font-size: 25px;
-}
-
-.download div {
-    background-color: rgb(47,49,54);
-    width: 200px;
-    border-radius: 10px;
-    height: 40px;
-    line-height: 40px;
-    margin: 0 auto;
-    margin-bottom: 15px;
-}
+    font-size: 100px;
+} 
