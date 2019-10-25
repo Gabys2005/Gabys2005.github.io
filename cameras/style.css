@@ -92,3 +92,20 @@ body {
 .videotutorial a {
     color: lightcoral;
 }
+
+.fadein {
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.lower {
+    height: 250px;
+}
