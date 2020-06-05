@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gabys2005</title>
+    <link rel = "icon" type = "image/png" href = "/assets/logo.png">
+    <link rel="stylesheet" href="/gifs/style.css">
+
+
+        <!-- Primary Meta Tags -->
+    <meta name="title" content="Gabys2005">
+    <meta name="description" content="Welcome to gabys.xyz!">
+    <meta name="theme-color" content="#d1b130">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gabys.xyz/">
+    <meta property="og:title" content="Gabys2005">
+    <meta property="og:description" content="Welcome to gabys.xyz!">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gabys.xyz/">
+    <meta property="twitter:title" content="Gabys2005">
+    <meta property="twitter:description" content="Welcome to gabys.xyz!">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
+</head>
+<body>
+    <div class="headerback">
+        <a href="/" class="backbutton"><div>Back</div></a>
+        <h1 class="middle">A GIF Module</h1>
+    </div>
+    <br>
+    <h1 class="middle" id="install">How to use</h1>
+    <h2 class="middle videotutorial">*pls report bugs to me*</h2>
+    <div class="steps fadein">
+        <div class="step">
+            <h2 class="middle">Download</h2>
+            <hr>
+            <p class="middle">Download the model by clicking the button below, drag it onto an open place in Studio.</p>
+            <a class="download" href="https://github.com/Gabys2005/Camera-System/raw/master/gifs/GIFPLayer.rbxm"><div>Download</div></a>
+        </div>
+        <br>
+        <div class="step">
+            <h2 class="middle">Basic usage</h2>
+            <hr>
+            <p class="middle">The module has only 1 function - <span class="code">newGIF()</span>,<br><br>Screen = a frame where the gif should be, <br>Image = ID of a spritesheet, <br>FPS = fps (up to 60), <br>FramesPerRow = how many frames are in 1 row, <br>Frames = total number of frames</p>
+            <pre><span class="local">local</span> GIFPlayer = <span class="func">require</span>(<span class="func">game</span>.ServerScriptService.GIFPlayer)
+
+<span class="local">local</span> gif = GIFPlayer.newGIF({Screen = <span class="func">workspace</span>.Screen.SurfaceGui.GIF,
+                            Image = <span class="string">"rbxassetid://3528512681"</span>,
+                            FPS = <span class="number">24</span>,
+                            FramesPerRow = <span class="number">6</span>,
+                            Frames = <span class="number">26</span>})
+                                            
+gif:Play()</pre>
+        </div>
+<br>
+        <div class="step">
+            <h2 class="middle">All functions</h2>
+            <hr>
+            <p class="middle"><span class="code">gif:Play()</span> - plays the GIF</p>
+            <p class="middle"><span class="code">gif:Stop()</span> - stops the GIF</p>
+            <p class="middle"><span class="code">gif:Reset()</span> - resets the GIF (puts it on the 1st frame)</p>
+            <p class="middle"><span class="code">gif:End()</span> - removes the GIF</p>
+            
+        </div>
+    </div>
+<br>
+    <div class="step">
+        <h2 class="middle">Using multiple spritesheets</h2>
+        <hr>
+        <p class="middle">The code below shows how to use multiple spritesheets in the same GIF (for better quality)</p>
+        <pre><span class="local">local</span> GIFPlayer = <span class="func">require</span>(<span class="func">game</span>.ServerScriptService.GIFPlayer)
+
+<span class="local">local</span> sheet1 = {Image = <span class="string">"rbxassetid://5138441857"</span>,
+                        FPS = <span class="number">2</span>,
+                        FramesPerRow = <span class="number">4</span>,
+                        Frames = <span class="number">20</span>},
+                        }
+
+<span class="local">local</span> sheet2 = {Image = <span class="string">"rbxassetid://3528512681"</span>,
+                        FPS = <span class="number">24</span>,
+                        FramesPerRow = <span class="number">6</span>,
+                        Frames = <span class="number">26</span>},
+                        }
+
+<span class="local">local</span> gif = GIFPlayer.newGIF({Screen = <span class="func">workspace</span>.Screen.SurfaceGui.GIF,
+                        Mode = <span class="string">"Advanced"</span>,
+                        SpriteSheets = {sheet1, sheet2})
+                                        
+gif:Play()</pre>
+    </div>
+    <br>
+   
+        <br>
+</body>
+</html>
