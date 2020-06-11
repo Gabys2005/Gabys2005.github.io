@@ -47,8 +47,8 @@
         <div class="step">
             <h2 class="middle">Basic usage</h2>
             <hr>
-            <p class="middle">The module has only 1 function - <span class="code">newGIF()</span>,<br><br>Screen = a frame where the gif should be<sup>1</sup>, <br>Image = ID of a spritesheet, <br>FPS = fps (up to 60), <br>FramesPerRow = how many frames are in 1 row, <br>Frames = total number of frames</p>
-            <p style="font-size: 12px; text-align:center;"><sup>1</sup> screen needs to point to a SurfaceGui, or any gui object like Frame, Scrolling Frame, TextLabel...<br>Note: in the example below the module is in ServerScriptService<br>Note 2: The Image needs to be a spritesheet. Click <a href="https://ezgif.com/gif-to-sprite">here</a> to convert your GIF into a sprite sheet</p>
+            <p class="middle">The module has only 1 function - <span class="code">newGIF()</span>,<br><br>Screen = a frame where the gif should be<sup>1</sup>, <br>Image = ID of a spritesheet<sup>2</sup>, <br>FPS = fps (up to 60)<sup>3</sup>, <br>FramesPerRow = how many frames are in 1 row, <br>Frames = total number of frames</p>
+            <p style="font-size: 12px; text-align:center;"><sup>1</sup> screen needs to point to a SurfaceGui, or any gui object like Frame, Scrolling Frame, TextLabel...<br><sup>2</sup> The Image needs to be a spritesheet. Click <a href="https://ezgif.com/gif-to-sprite">here</a> to convert your GIF into a sprite sheet<br><sup>3</sup> The GIF may be slower depending on the server lag created in the game<br>Note: in the example below the module is in ServerScriptService</p>
             <pre><span class="local">local</span> GIFPlayer = <span class="func">require</span>(<span class="func">game</span>.ServerScriptService.GIFPlayer)
 
 <span class="local">local</span> gif = GIFPlayer.newGIF({Screen = <span class="func">workspace</span>.Screen.SurfaceGui.GIF,
