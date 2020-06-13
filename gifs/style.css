@@ -117,6 +117,8 @@ pre {
     margin-left: 10px;
     margin-right: 10px;
     font-size: 17px;
+    overflow: auto;
+    white-space: nowrap;
 }
 
 .local {
@@ -139,8 +141,6 @@ pre {
     border-radius: 5px;
     font-family: monospace;
     font-size: 17px;
-    overflow: auto;
-    white-space: nowrap;
 }
 
 a {
