@@ -109,3 +109,9 @@ body {
 .lower {
     height: 250px;
 }
+
+@media (max-width: 700px) {
+    .step {
+        width: 99%;
+    }
+}
