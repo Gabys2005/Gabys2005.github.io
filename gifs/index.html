@@ -49,13 +49,13 @@
             <hr>
             <p class="middle">The module has 2 functions - <span class="code">newGIF()</span> and <span class="code">EndAllGifsIn()</span> (described in the next section),<br><br>Screen = a frame where the gif should be<sup>1</sup>, <br>Image = ID of a spritesheet<sup>2</sup>, <br>FPS = fps (up to 60)<sup>3</sup>, <br>FramesPerRow = how many frames are in 1 row, <br>Frames = total number of frames</p>
             <p style="font-size: 12px; text-align:center;"><sup>1</sup> screen needs to point to a SurfaceGui, or any gui object like Frame, Scrolling Frame, TextLabel...<br><sup>2</sup> The Image needs to be a spritesheet. Click <a href="https://ezgif.com/gif-to-sprite">here</a> to convert your GIF into a sprite sheet<br><sup>3</sup> The GIF may be slower depending on the server lag created in the game<br>Note: in the example below the module is in ServerScriptService</p>
-            <pre><span class="local">local</span> GIFPlayer = <span class="func">require</span>(<span class="func">game</span>.ServerScriptService.GIFPlayer)
-
-<span class="local">local</span> gif = GIFPlayer.newGIF({Screen = <span class="func">workspace</span>.Screen.SurfaceGui.GIF,
-                            Image = <span class="string">"rbxassetid://3528512681"</span>,
-                            FPS = <span class="number">24</span>,
-                            FramesPerRow = <span class="number">6</span>,
-                            Frames = <span class="number">26</span>})
+            <pre><span class="local">local</span> GIFPlayer = <span class="func">require</span>(<span class="func">game</span>.ServerScriptService.GIFPlayer)<br>
+                <br>
+<span class="local">local</span> gif = GIFPlayer.newGIF({Screen = <span class="func">workspace</span>.Screen.SurfaceGui.GIF,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Image = <span class="string">"rbxassetid://3528512681"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FPS = <span class="number">24</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FramesPerRow = <span class="number">6</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frames = <span class="number">26</span>})<br>
                                             
 gif:Play()</pre>
         </div>
@@ -76,7 +76,7 @@ gif:Play()</pre>
     <hr>
     <p class="middle"><span class="code">EndAllGifsIn(Instance)</span> is a function that runs <span class="code">gif:End()</span> on all GIFs that are a descendant of a location put as a variable</p>
     <pre><span class="local">local</span> GIFPlayer = <span class="func">require</span>(<span class="func">game</span>.ServerScriptService.GIFPlayer)
-    
+    <br><br>
 GIFPlayer.EndAllGifsIn(<span class="func">workspace</span>.Prop)</pre>
 </div>
 <br>
@@ -87,23 +87,23 @@ GIFPlayer.EndAllGifsIn(<span class="func">workspace</span>.Prop)</pre>
         <p class="middle">The code below shows how to use multiple spritesheets in the same GIF (for better quality)</p>
         <p style="font-size: 12px; text-align: center">Note: you can add more than 2 sheets</p>
         <pre><span class="local">local</span> GIFPlayer = <span class="func">require</span>(<span class="func">game</span>.ServerScriptService.GIFPlayer)
-
-<span class="local">local</span> sheet1 = {Image = <span class="string">"rbxassetid://5138441857"</span>,
-                        FPS = <span class="number">2</span>,
-                        FramesPerRow = <span class="number">4</span>,
-                        Frames = <span class="number">20</span>},
-                        }
-
-<span class="local">local</span> sheet2 = {Image = <span class="string">"rbxassetid://3528512681"</span>,
-                        FPS = <span class="number">24</span>,
-                        FramesPerRow = <span class="number">6</span>,
-                        Frames = <span class="number">26</span>},
-                        }
-
-<span class="local">local</span> gif = GIFPlayer.newGIF({Screen = <span class="func">workspace</span>.Screen.SurfaceGui.GIF,
-                        Mode = <span class="string">"Advanced"</span>,
-                        SpriteSheets = {sheet1, sheet2})
-                                        
+            <br><br>
+<span class="local">local</span> sheet1 = {Image = <span class="string">"rbxassetid://5138441857"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FPS = <span class="number">2</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FramesPerRow = <span class="number">4</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frames = <span class="number">20</span>},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        <br>
+<span class="local">local</span> sheet2 = {Image = <span class="string">"rbxassetid://3528512681"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FPS = <span class="number">24</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FramesPerRow = <span class="number">6</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frames = <span class="number">26</span>},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        <br>
+<span class="local">local</span> gif = GIFPlayer.newGIF({Screen = <span class="func">workspace</span>.Screen.SurfaceGui.GIF,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mode = <span class="string">"Advanced"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SpriteSheets = {sheet1, sheet2})<br>
+                        <br>     
 gif:Play()</pre>
     </div>
     
