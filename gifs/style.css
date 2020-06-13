@@ -139,6 +139,8 @@ pre {
     border-radius: 5px;
     font-family: monospace;
     font-size: 17px;
+    overflow: auto;
+    white-space: nowrap;
 }
 
 a {
