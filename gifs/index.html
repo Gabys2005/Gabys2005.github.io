@@ -47,8 +47,16 @@
         <div class="step">
             <h2 class="middle">Basic usage</h2>
             <hr>
-            <p class="middle">The module has 2 functions - <span class="code">newGIF()</span> and <span class="code">EndAllGifsIn()</span> (described in the next section),<br><br>Screen = a frame where the gif should be<sup>1</sup>, <br>Image = ID of a spritesheet<sup>2</sup>, <br>FPS = fps (up to 60)<sup>3</sup>, <br>FramesPerRow = how many frames are in 1 row, <br>Frames = total number of frames</p>
-            <p style="font-size: 12px; text-align:center;"><sup>1</sup> screen needs to point to a SurfaceGui, or any gui object like Frame, Scrolling Frame, TextLabel...<br><sup>2</sup> The Image needs to be a spritesheet. Click <a href="https://ezgif.com/gif-to-sprite">here</a> to convert your GIF into a sprite sheet<br><sup>3</sup> The GIF may be slower depending on the server lag created in the game<br>Note: in the example below the module is in ServerScriptService</p>
+            <p class="middle">The module has 2 functions - <span class="code">newGIF()</span> and <span class="code">EndAllGifsIn()</span> (described in the next section),<br><br>
+                Screen(s) = a frame/texture (or an array of them) where the gif should be<sup>1</sup>, <br>
+                Image = ID of a spritesheet<sup>2</sup>, <br>
+                FPS = fps (up to 60)<sup>3</sup>, <br>
+                FramesPerRow = how many frames are in 1 row, <br>
+                Frames = total number of frames</p>
+            <p style="font-size: 12px; text-align:center;"><sup>1</sup> screen needs to point to a SurfaceGui, Frame, Scrolling Frame, TextLabel... or a Texture (which adds support to meshes/unions/other shapes of parts)<br>
+                <sup>2</sup> The Image needs to be a spritesheet. Click <a href="https://ezgif.com/gif-to-sprite">here</a> to convert your GIF into a sprite sheet<br>
+                <sup>3</sup> The GIF may be slower depending on the server lag created in the game<br>
+                Note: in the example below the module is in ServerScriptService</p>
             <pre><span class="local">local</span> GIFPlayer = <span class="func">require</span>(<span class="func">game</span>.ServerScriptService.GIFPlayer)<br>
                 <br>
 <span class="local">local</span> gif = GIFPlayer.newGIF({Screen = <span class="func">workspace</span>.Screen.SurfaceGui.GIF,<br>
@@ -80,6 +88,24 @@ gif:Play()</pre>
 GIFPlayer.EndAllGifsIn(<span class="func">workspace</span>.Prop)</pre>
 </div>
 <br>
+
+<div class="step">
+    <h2 class="middle">Playing the same GIF on multiple screens</h2>
+    <hr>
+    <p class="middle">The code below shows how to play the same GIF on multiple screens without running .newGIF on each of them</p>
+    <pre><span class="local">local</span> GIFPlayer = <span class="func">require</span>(<span class="func">game</span>.ServerScriptService.GIFPlayer)
+            <br><br>
+<span class="local">local</span> surfaces = {<span class="func">workspace</span>.NormalScreen1.SurfaceGui,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="func">workspace</span>.MeshScreen1.Texture}
+            <br><br>
+<span class="local">local</span> gif = GIFPlayer.newGIF({Screens = surfaces,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Image = <span class="string">"rbxassetid://3528512681"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FPS = <span class="number">24</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FramesPerRow = <span class="number">6</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frames = <span class="number">26</span>})<br>
+                                            
+gif:Play()</pre>
+</div>
 
     <div class="step">
         <h2 class="middle">Using multiple spritesheets</h2>
