@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gabys2005</title>
+    <link rel = "icon" type = "image/png" href = "/assets/logo.png">
+    <link rel="stylesheet" href="style.css">
+
+
+        <!-- Primary Meta Tags -->
+    <meta name="title" content="Gabys2005">
+    <meta name="description" content="Welcome to gabys.xyz!">
+    <meta name="theme-color" content="#d1b130">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gabys.xyz/">
+    <meta property="og:title" content="Gabys2005">
+    <meta property="og:description" content="Welcome to gabys.xyz!">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gabys.xyz/">
+    <meta property="twitter:title" content="Gabys2005">
+    <meta property="twitter:description" content="Welcome to gabys.xyz!">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/excellentexport@3.4.3/dist/excellentexport.min.js"></script>
+    <script defer src="televotingResults.js"></script>
+</head>
+<body>
+    <div class="headerback">
+        <a href="/televoting" class="backbutton"><div>Back</div></a>
+        <h1 class="middle">Results viewer</h1>
+    </div>
+    <br>
+    <div class="centerDiv" id="insertCode">
+        <label for="generatedCode">Paste the text from Roblox here:</label><br><br>
+        <input id="generatedCode" type="text">
+        <p id="autocompleteText" style="margin: 5px; font-size: 15px; display: none;">(Autocompleted from your last visit)</p>
+        <button style="margin-top: 25px;" onclick="generateResults()">Generate</button>
+    </div>
+
+    <div id="main" class="centerDiv" style="display: none;">
+        <a class="fakebutton" id="excelDownload" href="#" download="results.xlsx" onclick="downloadAsExcel()">Download as Excel spreadsheet</a>
+        <br><br>
+        <h3>Results</h3>
+        <table id="resultsTable">
+            <tr>
+                <td>Name</td>
+                <td>Points</td>
+                <td>Percent</td>
+            </tr>
+        </table>
+        <br><br>
+        <h3>Individual Votes</h3>
+        <table id="individualVotes">
+            <tr>
+                <td>Username</td>
+                <td>Votes</td>
+            </tr>
+        </table>
+        <br><br>
+        <h3>Copy-Paste result announcement</h3>
+        <textarea readonly name="resultsToCopy" id="resultsToCopy" cols="30" rows="10"></textarea>
+        <br><br>
+        <h3>Discord Table</h3>
+        <textarea readonly name="resultsMarkdown" id="resultsMarkdown" cols="30" rows="10">```md
+Place | Points | Country
+====================================</textarea>
+    </div>
+</body>
+</html>
