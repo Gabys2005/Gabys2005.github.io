@@ -135,6 +135,9 @@ pre {
 .string {
     color: #ADF195;
 }
+.comment {
+    color: rgb(102,102,102);
+}
 
 .code {
     background-color: rgb(25, 27, 29);

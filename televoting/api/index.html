@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gabys2005</title>
+    <link rel = "icon" type = "image/png" href = "/assets/logo.png">
+    <link rel="stylesheet" href="/televoting/style.css">
+
+
+        <!-- Primary Meta Tags -->
+    <meta name="title" content="Gabys2005">
+    <meta name="description" content="Welcome to gabys.xyz!">
+    <meta name="theme-color" content="#d1b130">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gabys.xyz/">
+    <meta property="og:title" content="Gabys2005">
+    <meta property="og:description" content="Welcome to gabys.xyz!">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gabys.xyz/">
+    <meta property="twitter:title" content="Gabys2005">
+    <meta property="twitter:description" content="Welcome to gabys.xyz!">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
+</head>
+<body>
+    <div class="headerback">
+        <a href="/televoting" class="backbutton"><div>Back</div></a>
+        <h1 class="middle">Televoting API documentation</h1>
+    </div>
+    <br>
+    <div class="steps fadein">
+        <div class="step">
+            <h2 class="middle">Using the api</h2>
+            <hr>
+            <p class="middle">To use the api you simply just need to require the module located in the main televoting folder</p>
+            <pre><span class="local">local</span> api = <span class="func">require</span>(<span class="func">workspace</span>.Televoting.API)</pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:GetResults()</h2>
+            <hr>
+            <p class="middle">You can use <span class="code">api:GetResults()</span> to get the full results. The returned results will be sorted by points.</p>
+            <pre><span class="local">local</span> results = api:GetResults()<br>
+<span class="func">print</span>(results)<br><br>
+Can return for example:<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{name = <span class="string">"Option 1"</span>, points = <span class="number">5</span>},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{name = <span class="string">"Option 2"</span>, points = <span class="number">2</span>}<br>
+}</pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:GetPointsFor(name)</h2>
+            <hr>
+            <p class="middle">You can use <span class="code">api:GetResults()</span> to get the amount of points a specific voting option got.</p>
+            <pre><span class="local">local</span> points = api:GetPointsFor(<span class="string">"Option 2"</span>)<br>
+<span class="func">print</span>(points)<br><br>
+Can return for example:<br>
+<span class="number">10</span></pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:GetVotes(returnUsernames)</h2>
+            <hr>
+            <p class="middle">You can use <span class="code">api:GetVotes()</span> to get the all votes sent by players. The optional returnUsernames parameter can be set to true if you want the votes to also return the usernames and not only user ids.</p>
+            <pre><span class="local">local</span> votes = api:GetVotes(<span class="func">true</span>)<br>
+<span class="func">print</span>(votes)<br><br>
+Can return for example:<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{userid = <span class="number">147274250</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;username = <span class="string">"gabys2005"</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;votes = {<span class="string">"Option 1"</span>, <span class="string">"Option 3"</span>}}<br>
+}</pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:GetVotesFor(name, returnUsernames)</h2>
+            <hr>
+            <p class="middle">You can use <span class="code">api:GetVotesFor()</span> to get the people that voted for this option. The optional returnUsernames parameter can be set to true to make the function return usernames instead of user ids.</p>
+            <pre><span class="local">local</span> voted = api:GetVotesFor(<span class="string">"Option 2"</span>)<br>
+<span class="func">print</span>(voted)<br><br>
+Can return for example:<br>
+- when the returnUsernames parameter is set to true:<br>
+{<span class="string">"gabys2005"</span>, <span class="string">"builderman"</span>}<br><br>
+- when the returnUsernames parameter is set to false:<br>
+{<span class="number">147274250</span>, <span class="number">156</span>}</pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:GetResultsString()</h2>
+            <hr>
+            <p class="middle">You can use <span class="code">api:GetVotesFor()</span> to get the string that shows up when you click the Generate button</p>
+            <pre><span class="local">local</span> resultsString = api:GetResultsString()<br>
+<span class="func">print</span>(resultsString)<br><br>
+Can return for example:<br>
+[[<span class="string">"Option 1"</span>,<span class="string">"Option 2"</span>,<span class="string">"Option 3"</span>],[<span class="string">"gabys2005"</span>,<span class="number">2</span>,<span class="number">3</span>]]</pre>
+        </div>
+        <br>
+   
+        <br>
+</body>
+</html>
