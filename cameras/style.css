@@ -115,3 +115,80 @@ body {
         width: 99%;
     }
 }
+
+.code {
+    background-color: rgb(25, 27, 29);
+    padding: 5px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 17px;
+}
+
+pre {
+    background-color: rgb(25, 27, 29);
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 17px;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.local {
+    color: #F86D7C;
+}
+.func {
+    color: #84D6F7;
+}
+
+.number {
+    color: #FFC600;
+}
+.string {
+    color: #ADF195;
+}
+
+.code {
+    background-color: rgb(25, 27, 29);
+    padding: 5px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 17px;
+}
+
+.comment {
+    color: rgb(102,102,102);
+}
+
+.downloadLinks {
+    margin: 0 auto;
+    width: 350px;
+    margin-bottom: 10px;
+}
+
+.multidownload {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    width: 500px;
+}
+
+.multidownload div {
+    background-color: rgb(47,49,54);
+    width: 200px;
+    border-radius: 10px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    transition: 0.5s;
+    display: inline;
+    padding: 5px 20px;
+    margin-left: 15px;
+}
+
+.multidownload div:hover {
+    background-color: rgba(216, 231, 10, 0.76);
+}

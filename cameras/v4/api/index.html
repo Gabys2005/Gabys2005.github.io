@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gabys2005</title>
+    <link rel = "icon" type = "image/png" href = "/assets/logo.png">
+    <link rel="stylesheet" href="/cameras/style.css">
+
+        <!-- Primary Meta Tags -->
+    <meta name="title" content="Gabys2005">
+    <meta name="description" content="Welcome to gabys.xyz!">
+    <meta name="theme-color" content="#d1b130">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gabys.xyz/">
+    <meta property="og:title" content="Gabys2005">
+    <meta property="og:description" content="Welcome to gabys.xyz!">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gabys.xyz/">
+    <meta property="twitter:title" content="Gabys2005">
+    <meta property="twitter:description" content="Welcome to gabys.xyz!">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
+</head>
+<body>
+    <div class="headerback">
+        <a href="/cameras/v4" class="backbutton"><div>Back</div></a>
+        <h1 class="middle">Camera System v4 API</h1>
+    </div>
+    <br>
+    <div class="steps fadein">
+        <div class="step">
+            <h2 class="middle">Getting access to the API</h2>
+            <hr>
+            <p class="middle">To start using the API, simply <span class="code">require</span> it, it gets added to the main <span class="code">CameraSystem</span> folder when the game starts</p>
+            <pre><span class="local">local</span> api = <span class="func">require</span>(<span class="func">workspace</span>.CameraSystem:WaitForChild(<span class="string">"API"</span>))</pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:GetCamIdFromName()</h2>
+            <hr>
+            <p class="middle"><span class="code">GetCamIdFromName(type, name)</span> - returns camera id</p>
+            <pre><func class="local">local</func> id = api:GetCamIdFromName(<span class="string">"Moving"</span>, <span class="string">"Example"</span>)<br>
+                <span class="func">print</span>(id) <span class="comment">=> 1</span></pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:ChangeCam()</h2>
+            <hr>
+            <p class="middle"><span class="code">ChangeCam(type, id)</span> - returns nothing, changes the current camera</p>
+            <pre>api:ChangeCam(<span class="string">"Moving"</span>, <span class="number">1</span>)</pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:GetCurrentCam()</h2>
+            <hr>
+            <p class="middle"><span class="code">GetCurrentCam()</span> - returns a table with the type, id, name and time (if current cam is a moving cam) and the camera model</p>
+            <pre><func class="local">local</func> cam = api:GetCurrentCam()<br>
+                <span class="func">print</span>(cam) <span class="comment">=> {Type = "Moving", Id = 1, Name = "Example", Time = 5, Model = workspace.CameraSystem.Cameras.Moving.Example}</span></pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:Focus()</h2>
+            <hr>
+            <p class="middle"><span class="code">Focus(playerText)</span> - attempts to focus on the player with username starting with <span class="code">playerText</span>, if <span class="code">playerText</span> is nil or "" then it will remove any focus, returns the focused player or nil</p>
+            <pre><func class="local">local</func> focused = api:Focus(<span class="string">"gab"</span>)<br>
+                <span class="func">print</span>(focused.Name) <span class="comment">=> "gabys2005"</span></pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:GetFocus()</h2>
+            <hr>
+            <p class="middle"><span class="code">GetFocus()</span> - returns currently focused player or nil</p>
+            <pre><func class="local">local</func> focused = api:GetFocus()<br>
+                <span class="func">print</span>(focused.Name) <span class="comment">=> "gabys2005"</span></pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:Blur()</h2>
+            <hr>
+            <p class="middle"><span class="code">Blur(level, time)</span> - sets the blur to the specified level in the specified time, time defaults to 0.1</p>
+            <pre>api:Blur(<span class="number">10</span>)</pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:GetBlur()</h2>
+            <hr>
+            <p class="middle"><span class="code">GetBlur()</span> - returns the current level of blur</p>
+            <pre><func class="local">local</func> blur = api:GetBlur()<br>
+                <span class="func">print</span>(blur) <span class="comment">=> 10</span></pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:Fov()</h2>
+            <hr>
+            <p class="middle"><span class="code">Fov(level, time)</span> - sets the FOV to the specified level in the specified time, time defaults to 0.1</p>
+            <pre>api:Fov(<span class="number">50</span>)</pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:GetFov()</h2>
+            <hr>
+            <p class="middle"><span class="code">GetFov()</span> - returns the current FOV</p>
+            <pre><func class="local">local</func> fov = api:GetFov()<br>
+                <span class="func">print</span>(fov) <span class="comment">=> 50</span></pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:Blackout()</h2>
+            <hr>
+            <p class="middle"><span class="code">Blackout(enabled, color)</span> - enables or disabled the blackout, if color is specified then sets the blackout color to color</p>
+            <pre>api:Blackout(<span class="func">true</span>, <span class="func">Color3.fromRGB</span>(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>))</pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:GetBlackout()</h2>
+            <hr>
+            <p class="middle"><span class="code">GetBlackout()</span> - returns a bool representing if the blackout is active, and a color of the current blackout</p>
+            <pre><func class="local">local</func> enabled, color = api:GetBlackout()<br>
+                <span class="func">print</span>(enabled, color) <span class="comment">=> true, 0,1,0</span></pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:Saturation()</h2>
+            <hr>
+            <p class="middle"><span class="code">Fov(level, time)</span> - sets the saturation to the specified level in the specified time, time defaults to 0.1</p>
+            <pre>api:Saturation(<span class="number">-1</span>)</pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:GetSaturation()</h2>
+            <hr>
+            <p class="middle"><span class="code">GetSaturation()</span> - returns the current saturation value</p>
+            <pre><func class="local">local</func> saturation = api:GetSaturation()<br>
+                <span class="func">print</span>(saturation) <span class="comment">=> -1</span></pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:TintColor()</h2>
+            <hr>
+            <p class="middle"><span class="code">TintColor(color, time)</span> - sets the tint color to the specified color in the specified time, time defaults to 0.1</p>
+            <pre>api:TintColor(<span class="func">Color3.fromRGB</span>(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>))</pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:GetTintColor()</h2>
+            <hr>
+            <p class="middle"><span class="code">GetTintColor()</span> - returns the current tint color</p>
+            <pre><func class="local">local</func> color = api:GetTintColor()<br>
+                <span class="func">print</span>(color) <span class="comment">=> 0,1,0</span></pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:Bars()</h2>
+            <hr>
+            <p class="middle"><span class="code">Bars(enabled)</span> - enables or disables the bars</p>
+            <pre>api:Bars(<span class="func">true</span>)</pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:GetBars()</h2>
+            <hr>
+            <p class="middle"><span class="code">GetBars()</span> - returns a bool indicating if the bars are enabled or not</p>
+            <pre><func class="local">local</func> enabled = api:GetBars()<br>
+                <span class="func">print</span>(enabled) <span class="comment">=> true</span></pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:BarSize()</h2>
+            <hr>
+            <p class="middle"><span class="code">BarSize(size)</span> - sets the size of one bar to take up this much screen (for example size 25 will make 1 bar take up 25% of the screen)</p>
+            <pre>api:BarSize(<span class="number">25</span>)</pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:TransitionFade()</h2>
+            <hr>
+            <p class="middle"><span class="code">TransitionFade(enabled, color)</span> - enables or disables the transition between 2 cameras, if color is defined then sets the transition color to color</p>
+            <pre>api:TransitionFade(<span class="func">false</span>)</pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:GetTransition()</h2>
+            <hr>
+            <p class="middle"><span class="code">GetTransition()</span> - returns a bool indicating if the transition is enabled or not, and the color of the transition</p>
+            <pre><func class="local">local</func> enabled, color = api:GetTransition()<br>
+                <span class="func">print</span>(enabled, color) <span class="comment">=> false, 0,0,0</span></pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">api:AskForValues()</h2>
+            <hr>
+            <p class="middle"><span class="code">AskForValues(plr, data)</span> - used by macros, ask the user (plr) for values<br>
+                Data is a table, where the first thing is the name that you want visible on the gui.<br>
+                All things after that are the values you want, every value is a table with <span class="code">Name</span> and <span class="code">Type</span>.<br>
+                Type can be set to <span class="code">String</span>, <span class="code">Number</span> or <span class="code">Slider</span>. If Type is <span class="code">Slider</span> then you also need to specify <span class="code">Min</span> and <span class="code">Max</span> values for it<br>
+                returns a tuple (multiple values), values that you requested, if the first value is nil then the user cancelled the prompt</p>
+            <pre><func class="local">local</func> fov, exampleString, exampleNum = api:AskForValues(plr, {<span class="string">"API Example"</span>, {Type = <span class="string">"Slider"</span>, Name = <span class="string">"SliderExample"</span>, Min = <span class="number">0</span>, Max = <span class="number">100</span>}, {Type = <span class="string">"String"</span>, Name = <span class="string">"StringExample"</span>}, {Type = <span class="string">"Number"</span>, Name = <span class="string">"NumberExample"</span>}})<br>
+                <span class="func">if</span> fov <span class="func">then</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="func">print</span>(fov, exampleString, exampleNum)<br>
+                <span class="func">else</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="func">print</span>(<span class="string">"User cancelled the prompt"</span>)<br>
+                <span class="func">end</span></pre>
+        </div>
+        <br>
+
+        <br>
+    </div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gabys2005</title>
+    <link rel = "icon" type = "image/png" href = "/assets/logo.png">
+    <link rel="stylesheet" href="/cameras/style.css">
+
+        <!-- Primary Meta Tags -->
+    <meta name="title" content="Gabys2005">
+    <meta name="description" content="Welcome to gabys.xyz!">
+    <meta name="theme-color" content="#d1b130">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gabys.xyz/">
+    <meta property="og:title" content="Gabys2005">
+    <meta property="og:description" content="Welcome to gabys.xyz!">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gabys.xyz/">
+    <meta property="twitter:title" content="Gabys2005">
+    <meta property="twitter:description" content="Welcome to gabys.xyz!">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
+</head>
+<body>
+    <div class="headerback">
+        <a href="/cameras" class="backbutton"><div>Back</div></a>
+        <h1 class="middle">Camera System v4</h1>
+    </div>
+    <br>
+    <h2 class="middle videotutorial">Note: this is very new so please report all bugs to me thanks</h2>
+    <div class="steps fadein">
+        <div class="step">
+            <h2 class="middle">Important</h2>
+            <hr>
+            <p class="middle">This version isn't 100% completed yet. It DOES have some bugs. If you found a bug or have a suggestion that isn't on <a href="https://trello.com/b/kd0RES1n/camera-system-suggestions" style="color: lightcoral;">THIS</a> board yet, please DM me on discord Gabys2005#1691</p>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">Installation</h2>
+            <hr>
+            <p class="middle">First, press the download button below. Your browser should download "CameraSystemV4.rbxm".</p>
+            <a class="download" href="https://github.com/Gabys2005/Camera-System/raw/master/Model/CameraSystemV4.rbxm"><div>Download</div></a>
+            <p class="middle">Open a place in Roblox Studio (where you want the cameras to be) and drag the file you downloaded onto Studio.</p>
+            <p class="middle">Read the info script and change the settings (mainly the GuiOwners)</p>
+            <h2 class="middle" style="color:gold;"><b>DONE</b></h2>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">Transfering previous versions into V4</h2>
+            <hr>
+            <p class="middle">To transfer cameras made in the previous versions to V4, first rename your current CameraSystem folder to CameraSystemOld, then insert V4 into the game, below press the button representing the version that you are using, copy the script that comes up and paste it into the command bar in Studio, at the end delete the CameraSystemOld folder</p>
+            <div class="downloadLinks"><a target="_blank" class="multidownload" href="https://raw.githubusercontent.com/Gabys2005/Camera-System/master/TransferV2toV4.lua"><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></a><a target="_blank" class="multidownload" href="https://raw.githubusercontent.com/Gabys2005/Camera-System/master/TransferV3toV4.lua"><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></a></div>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">Keybinds</h2>
+            <hr>
+            <p class="middle">V4 allows you to fully customise the keybinds you want to use.<br>
+            In settings, in the KeyBinds table you can add a new table for new keybinds<br>
+            In the <span class="code">Keys</span> entry specify the keys that should be pressed to trigger the keybind<br>
+            In the <span class="code">Run</span> entry specify what action should be taken<br>
+            Below are all possible Run actions:</p>
+            <pre>{<span class="string">"FOV"</span>, fov, time} <span class="comment">for example</span> {<span class="string">"FOV"</span>, <span class="number">20</span>, <span class="number">5</span>} <span class="comment">will change the fov to 20 in 5 secs</span><br>
+{<span class="string">"Rainbow"</span>} <span class="comment">will toggle the rainbow effect</span><br>
+{<span class="string">"Blackout"</span>} <span class="comment">will toggle the blackout effect</span><br>
+{<span class="string">"Whiteout"</span>} <span class="comment">will toggle the whiteout effect</span><br>
+{<span class="string">"Colorout"</span>, color} <span class="comment">will toggle a blackout-like effect with specified color, for example</span> {<span class="string">"Colorout"</span>, Color3.fromRGB(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>)} <span class="comment">will make the screen red</span><br>
+{<span class="string">"TintColor"</span>, color, time} <span class="comment">will change the tint color to the specified color in the specified time (defaults to 0.1), for example</span> {<span class="string">"TintColor"</span>,Color3.fromRGB(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">1</span>}<br>
+{<span class="string">"Saturation"</span>, level, time} <span class="comment">will change the saturation to the given level in the specified time, for example</span> {<span class="string">"Saturation"</span>, <span class="number">-1</span>, <span class="number">0.1</span>} <span class="comment">will make everything black and white</span><br>
+{<span class="string">"Blur"</span>, level, time} <span class="comment">will change the blur to the given level in the specified time</span><br>
+{<span class="string">"ChangeCam"</span>, type, id} <span class="comment">will change the camera to the given one, note that you can use the api:GetCamIdFromName() method to translate a name to an id, for example</span> {<span class="string">"ChangeCam"</span>, <span class="string">"Moving"</span>, api:GetCamIdFromName(<span class="string">"Moving"</span>, <span class="string">"Example"</span>)}<br>
+{<span class="string">"Macro"</span>, macro name, function name} <span class="comment">will run the given function from a given macro for example</span> {<span class="string">"Macro"</span>, <span class="string">"ZoomIn"</span>, <span class="string">"LeftClick"</span>}
+            </pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">Macros/API</h2>
+            <hr>
+            <p class="middle">Macros allow you to do multiple things using 1 button, they're normal functions that can use the API<br>
+                To create a macro, simply add a new table to the Macros table in the settings, the new table has to include a <span class="code">Name</span> entry which will be the name on the button<br>
+                You can also specify <span class="code">LeftClick</span> and <span class="code">RightClick</span> functions which will run (on the server) when you left click or right click the button. Both functions will be ran with a paramter representing the player that pressed the button</p>
+                <p>For a documentation of the API, click <a href="/cameras/v4/api" style="color: lightcoral;">HERE</a></p>
+                <p>Below is an example macro, which will show you a slider to zoom in when you left click the button</p>
+                <pre>{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Name = <span class="string">"ZoomIn"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;LeftClick = <span class="func">function</span>(plr)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="local">local</span> currentFov = api:GetFov()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="local">local</span> newFov = api:AskForValues(plr,{<span class="string">"Zoom In"</span>, {Type = <span class="string">"slider"</span>, Name = <span class="string">"New FOV"</span>, Min = <span class="number">1</span>, Max = currentFov}})<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="func">if</span> newFov <span class="func">then</span> <span class="comment">-- If the user didnt cancel the prompt</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;api:Fov(newFov)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="func">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="func">end</span>;<br>
+};</pre>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">Source Code</h2>
+            <hr>
+            <p class="middle">Because v4 is auto-updating, the source code isn't included with the thing you download. If you want to check it out, either get it in Roblox library, or download it from github</p>
+            <div class="downloadLinks"><a class="multidownload" target="_blank" href="https://www.roblox.com/library/6249508959/Cameras-V4-MainModule"><div>&nbsp;&nbsp;&nbsp;Roblox&nbsp;&nbsp;&nbsp;</div></a><a class="multidownload" href="https://github.com/Gabys2005/Camera-System/raw/master/Model/CameraSystemV4MainModule.rbxm"><div>Download</div></a></div>
+        </div>
+        <br>
+
+        <br>
+    </div>
+</body>
+</html>
