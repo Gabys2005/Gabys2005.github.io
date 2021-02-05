@@ -1,0 +1,194 @@
+body {
+    background-color: rgb(32,34,37);
+    color: #FFFFFF;
+    font-family: "Helvetica", "Verdana";
+    margin: 0 0 0 0;
+}
+
+.headerback {
+    background-color: rgb(54,57,63);
+    padding-top: 15px;
+    padding-bottom: 10px;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.2);
+}
+
+.middle {
+    text-align: center;
+}
+
+.backbutton {
+    color: white;
+    text-decoration: none;
+    background-color: rgb(47,49,54);
+    height: 40px;
+    width: 70px;
+    margin-left: 20px;
+    margin-top: 15px;
+    position: absolute;
+    transition: 0.5s;
+}
+
+.backbutton div {
+    width: 70px;
+    text-align: center;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    text-decoration: none;
+    line-height: 40px;
+}
+
+.backbutton:hover {
+    background-color: rgba(216, 231, 10, 0.76);
+}
+
+.step {
+    border-color: white;
+    width: 700px;
+    border: 2px solid lightblue;
+    border-radius: 15px;
+    margin: 0 auto;
+}
+
+.step p {
+    font-size: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.download {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    width: 10px;
+}
+
+.download div {
+    background-color: rgb(47,49,54);
+    width: 200px;
+    border-radius: 10px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    transition: 0.5s;
+}
+
+.download div:hover {
+    background-color: rgba(216, 231, 10, 0.76);
+}
+
+.video {
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+
+.videotutorial {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.videotutorial a {
+    color: lightcoral;
+}
+
+.fadein {
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.lower {
+    height: 250px;
+}
+
+@media (max-width: 700px) {
+    .step {
+        width: 99%;
+    }
+}
+
+.code {
+    background-color: rgb(25, 27, 29);
+    padding: 5px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 17px;
+}
+
+pre {
+    background-color: rgb(25, 27, 29);
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 17px;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.local {
+    color: #F86D7C;
+}
+.func {
+    color: #84D6F7;
+}
+
+.number {
+    color: #FFC600;
+}
+.string {
+    color: #ADF195;
+}
+
+.code {
+    background-color: rgb(25, 27, 29);
+    padding: 5px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 17px;
+}
+
+.comment {
+    color: rgb(102,102,102);
+}
+
+.downloadLinks {
+    margin: 0 auto;
+    width: 350px;
+    margin-bottom: 10px;
+}
+
+.multidownload {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    width: 500px;
+}
+
+.multidownload div {
+    background-color: rgb(47,49,54);
+    width: 200px;
+    border-radius: 10px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    transition: 0.5s;
+    display: inline;
+    padding: 5px 20px;
+    margin-left: 15px;
+}
+
+.multidownload div:hover {
+    background-color: rgba(216, 231, 10, 0.76);
+}
