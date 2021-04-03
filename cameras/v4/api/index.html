@@ -230,6 +230,26 @@
         </div>
         <br>
 
+        <div class="step">
+            <h2 class="middle">api:On()</h2>
+            <hr>
+            <p class="middle"><span class="code">On(eventName, func)</span> - allows you to run your own code whenever something happens in the system (like a camera change). Below are all of the possible events with the parameters they pass on (name: params)</p>
+            <span class="code">CamChange: camType,camId</span><br>
+            <span class="code">FocusChange: player/nil</span><br> - will return the player if found any, nil if none were found or unfocused
+            <span class="code">BlurChange: level,time</span><br>
+            <span class="code">FovChange: fov,time</span><br>
+            <span class="code">Blackout: visible,color</span><br> - color is optional
+            <span class="code">SaturationChange: level,time</span><br>
+            <span class="code">BarsToggle: visible</span><br> - when the bars are being turned on or off
+            <span class="code">BarSizeChange: size</span><br> - when the size of the bars is being changed
+            <span class="code">TransitionModeChange: mode</span><br>
+            <pre>api:On(<span class="string">"CamChange"</span>, <span class="func">function</span>()
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="local">local</span> currentCam = api:GetCurrentCam()
+            <span class="func">print</span>(<span class="string">"Changed the camera to: "</span> .. currentCam.Name)
+            <span class="func">end</span>)</pre>
+        </div>
+        <br>
+
         <br>
     </div>
 </body>
