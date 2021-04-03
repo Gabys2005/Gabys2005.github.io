@@ -234,18 +234,18 @@
             <h2 class="middle">api:On()</h2>
             <hr>
             <p class="middle"><span class="code">On(eventName, func)</span> - allows you to run your own code whenever something happens in the system (like a camera change). Below are all of the possible events with the parameters they pass on (name: params)</p>
-            <p><span class="code">CamChange: camType,camId</span></p><br>
-            <p><span class="code">FocusChange: player/nil</span> - will return the player if found any, nil if none were found or unfocused</p><br>
-            <p><span class="code">BlurChange: level,time</span></p><br>
-            <p><span class="code">FovChange: fov,time</span></p><br>
-            <p><span class="code">Blackout: visible,color</span> - color is optional</p><br>
-            <p><span class="code">SaturationChange: level,time</span></p><br>
-            <p><span class="code">BarsToggle: visible</span> - when the bars are being turned on or off</p><br>
-            <p><span class="code">BarSizeChange: size</span> - when the size of the bars is being changed</p><br>
-            <p><span class="code">TransitionModeChange: mode</span></p><br>
-            <pre>api:On(<span class="string">"CamChange"</span>, <span class="func">function</span>()
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="local">local</span> currentCam = api:GetCurrentCam()
-            <span class="func">print</span>(<span class="string">"Changed the camera to: "</span> .. currentCam.Name)
+            <p><span class="code">CamChange: camType,camId</span></p>
+            <p><span class="code">FocusChange: player/nil</span> - will return the player if found any, nil if none were found or unfocused</p>
+            <p><span class="code">BlurChange: level,time</span></p>
+            <p><span class="code">FovChange: fov,time</span></p>
+            <p><span class="code">Blackout: visible,color</span> - color is optional</p>
+            <p><span class="code">SaturationChange: level,time</span></p>
+            <p><span class="code">BarsToggle: visible</span> - when the bars are being turned on or off</p>
+            <p><span class="code">BarSizeChange: size</span> - when the size of the bars is being changed</p>
+            <p><span class="code">TransitionModeChange: mode</span></p>
+            <pre>api:On(<span class="string">"CamChange"</span>, <span class="func">function</span>()<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="local">local</span> currentCam = api:GetCurrentCam()<br>
+            <span class="func">print</span>(<span class="string">"Changed the camera to: "</span> .. currentCam.Name)<br>
             <span class="func">end</span>)</pre>
         </div>
         <br>
