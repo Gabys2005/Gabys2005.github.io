@@ -192,3 +192,7 @@ pre {
 .multidownload div:hover {
     background-color: rgba(216, 231, 10, 0.76);
 }
+
+a {
+    color: white;
+}
