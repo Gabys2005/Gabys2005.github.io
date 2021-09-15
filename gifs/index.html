@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gabys2005</title>
-    <link rel = "icon" type = "image/png" href = "/assets/logo.png">
+    <link rel="icon" type="image/png" href="/assets/logo.png">
     <link rel="stylesheet" href="/gifs/style.css">
 
 
-        <!-- Primary Meta Tags -->
+    <!-- Primary Meta Tags -->
     <meta name="title" content="Gabys2005">
     <meta name="description" content="Welcome to gabys.xyz!">
     <meta name="theme-color" content="#d1b130">
@@ -19,18 +20,23 @@
     <meta property="og:url" content="https://gabys.xyz/">
     <meta property="og:title" content="Gabys2005">
     <meta property="og:description" content="Welcome to gabys.xyz!">
-    <meta property="og:image" content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://gabys.xyz/">
     <meta property="twitter:title" content="Gabys2005">
     <meta property="twitter:description" content="Welcome to gabys.xyz!">
-    <meta property="twitter:image" content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
+    <meta property="twitter:image"
+        content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
 </head>
+
 <body>
     <div class="headerback">
-        <a href="/" class="backbutton"><div>Back</div></a>
+        <a href="/" class="backbutton">
+            <div>Back</div>
+        </a>
         <h1 class="middle">A GIF Module</h1>
     </div>
     <br>
@@ -40,23 +46,31 @@
         <div class="step">
             <h2 class="middle">Download</h2>
             <hr>
-            <p class="middle">Download the model by clicking the button below, drag it onto an open place in Studio.</p>
-            <a class="download" href="https://github.com/Gabys2005/Gabys2005.github.io/raw/master/gifs/GIFPlayer.rbxm"><div>Download</div></a>
+            <p class="middle">Click the button below to get redirected to Roblox's library page. Take the asset from
+                there and use the Toolbox in Studio to insert it into your game.</p>
+            <a class="download" href="https://www.roblox.com/library/7482594999/GIF-Player">
+                <div>Download</div>
+            </a>
         </div>
         <br>
         <div class="step">
             <h2 class="middle">Basic usage</h2>
             <hr>
-            <p class="middle">The module has 2 functions - <span class="code">newGIF()</span> and <span class="code">EndAllGifsIn()</span> (described in the next section),<br><br>
+            <p class="middle">The module has 2 functions - <span class="code">newGIF()</span> and <span
+                    class="code">EndAllGifsIn()</span> (described in the next section),<br><br>
                 Screen(s) = a frame/texture (or an array of them) where the gif should be<sup>1</sup>, <br>
                 Image = ID of a spritesheet<sup>2</sup>, <br>
                 FPS = fps (up to 60)<sup>3</sup>, <br>
                 FramesPerRow = how many frames are in 1 row, <br>
                 Frames = total number of frames</p>
-            <p style="font-size: 12px; text-align:center;"><sup>1</sup> screen needs to point to a SurfaceGui, Frame, Scrolling Frame, TextLabel... or a Texture (which adds support to meshes/unions/other shapes of parts)<br>
-                <sup>2</sup> The Image needs to be a spritesheet. Click <a href="https://ezgif.com/gif-to-sprite">here</a> to convert your GIF into a sprite sheet<br>
+            <p style="font-size: 12px; text-align:center;"><sup>1</sup> screen needs to point to a SurfaceGui, Frame,
+                Scrolling Frame, TextLabel... or a Texture (which adds support to meshes/unions/other shapes of
+                parts)<br>
+                <sup>2</sup> The Image needs to be a spritesheet. Click <a
+                    href="https://ezgif.com/gif-to-sprite">here</a> to convert your GIF into a sprite sheet<br>
                 <sup>3</sup> The GIF may be slower depending on the server lag created in the game<br>
-                Note: in the example below the module is in ServerScriptService</p>
+                Note: in the example below the module is in ServerScriptService
+            </p>
             <pre><span class="local">local</span> GIFPlayer = <span class="func">require</span>(<span class="func">game</span>.ServerScriptService.GIFPlayer)<br>
                 <br>
 <span class="local">local</span> gif = GIFPlayer.newGIF({Screen = <span class="func">workspace</span>.Screen.SurfaceGui.GIF,<br>
@@ -67,7 +81,7 @@
                                             
 gif:Play()</pre>
         </div>
-<br>
+        <br>
         <div class="step">
             <h2 class="middle">All functions</h2>
             <hr>
@@ -75,33 +89,37 @@ gif:Play()</pre>
             <p class="middle"><span class="code">gif:Stop()</span> - stops the GIF</p>
             <p class="middle"><span class="code">gif:Reset()</span> - resets the GIF (puts it on the 1st frame)</p>
             <p class="middle"><span class="code">gif:End()</span> - removes the GIF</p>
-            
-        </div>
-<br>
 
-<div class="step">
-            <h2 class="middle">Control Panel</h2>
-            <hr>
-            <p class="middle">You can use this control panel to change GIFs on the same screen.</p>
-            <a class="download" href="https://github.com/Gabys2005/Gabys2005.github.io/raw/master/gifs/GIFPicker.rbxm"><div>Download</div></a>
         </div>
         <br>
 
-<div class="step">
-    <h2 class="middle">Stopping all GIFs in an instance</h2>
-    <hr>
-    <p class="middle"><span class="code">EndAllGifsIn(Instance)</span> is a function that runs <span class="code">gif:End()</span> on all GIFs that are a descendant of a location put as a variable</p>
-    <pre><span class="local">local</span> GIFPlayer = <span class="func">require</span>(<span class="func">game</span>.ServerScriptService.GIFPlayer)
+        <div class="step">
+            <h2 class="middle">Control Panel</h2>
+            <hr>
+            <p class="middle">You can use this control panel to change GIFs on the same screen.</p>
+            <a class="download" href="https://www.roblox.com/library/7482597631/GIF-Picker">
+                <div>Download</div>
+            </a>
+        </div>
+        <br>
+
+        <div class="step">
+            <h2 class="middle">Stopping all GIFs in an instance</h2>
+            <hr>
+            <p class="middle"><span class="code">EndAllGifsIn(Instance)</span> is a function that runs <span
+                    class="code">gif:End()</span> on all GIFs that are a descendant of a location put as a variable</p>
+            <pre><span class="local">local</span> GIFPlayer = <span class="func">require</span>(<span class="func">game</span>.ServerScriptService.GIFPlayer)
     <br><br>
 GIFPlayer.EndAllGifsIn(<span class="func">workspace</span>.Prop)</pre>
-</div>
-<br>
+        </div>
+        <br>
 
-<div class="step">
-    <h2 class="middle">Playing the same GIF on multiple screens</h2>
-    <hr>
-    <p class="middle">The code below shows how to play the same GIF on multiple screens without running .newGIF on each of them</p>
-    <pre><span class="local">local</span> GIFPlayer = <span class="func">require</span>(<span class="func">game</span>.ServerScriptService.GIFPlayer)
+        <div class="step">
+            <h2 class="middle">Playing the same GIF on multiple screens</h2>
+            <hr>
+            <p class="middle">The code below shows how to play the same GIF on multiple screens without running .newGIF
+                on each of them</p>
+            <pre><span class="local">local</span> GIFPlayer = <span class="func">require</span>(<span class="func">game</span>.ServerScriptService.GIFPlayer)
             <br><br>
 <span class="local">local</span> surfaces = {<span class="func">workspace</span>.NormalScreen1.SurfaceGui,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="func">workspace</span>.MeshScreen1.Texture}
@@ -113,16 +131,17 @@ GIFPlayer.EndAllGifsIn(<span class="func">workspace</span>.Prop)</pre>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frames = <span class="number">26</span>})<br>
                                             
 gif:Play()</pre>
-</div>
+        </div>
 
-<br>
+        <br>
 
-    <div class="step">
-        <h2 class="middle">Using multiple spritesheets</h2>
-        <hr>
-        <p class="middle">The code below shows how to use multiple spritesheets in the same GIF (for better quality)</p>
-        <p style="font-size: 12px; text-align: center">Note: you can add more than 2 sheets</p>
-        <pre><span class="local">local</span> GIFPlayer = <span class="func">require</span>(<span class="func">game</span>.ServerScriptService.GIFPlayer)
+        <div class="step">
+            <h2 class="middle">Using multiple spritesheets</h2>
+            <hr>
+            <p class="middle">The code below shows how to use multiple spritesheets in the same GIF (for better quality)
+            </p>
+            <p style="font-size: 12px; text-align: center">Note: you can add more than 2 sheets</p>
+            <pre><span class="local">local</span> GIFPlayer = <span class="func">require</span>(<span class="func">game</span>.ServerScriptService.GIFPlayer)
             <br><br>
 <span class="local">local</span> sheet1 = {Image = <span class="string">"rbxassetid://5138441857"</span>,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FPS = <span class="number">2</span>,<br>
@@ -141,11 +160,12 @@ gif:Play()</pre>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SpriteSheets = {sheet1, sheet2})<br>
                         <br>     
 gif:Play()</pre>
+        </div>
+
     </div>
-    
-</div>
     <br>
-   
-        <br>
+
+    <br>
 </body>
+
 </html>

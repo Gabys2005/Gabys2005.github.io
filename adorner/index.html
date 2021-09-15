@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gabys2005</title>
-    <link rel = "icon" type = "image/png" href = "/assets/logo.png">
+    <link rel="icon" type="image/png" href="/assets/logo.png">
     <link rel="stylesheet" href="/adorner/style.css">
 
 
-        <!-- Primary Meta Tags -->
+    <!-- Primary Meta Tags -->
     <meta name="title" content="Gabys2005">
     <meta name="description" content="Welcome to gabys.xyz!">
     <meta name="theme-color" content="#d1b130">
@@ -19,18 +20,23 @@
     <meta property="og:url" content="https://gabys.xyz/">
     <meta property="og:title" content="Gabys2005">
     <meta property="og:description" content="Welcome to gabys.xyz!">
-    <meta property="og:image" content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://gabys.xyz/">
     <meta property="twitter:title" content="Gabys2005">
     <meta property="twitter:description" content="Welcome to gabys.xyz!">
-    <meta property="twitter:image" content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
+    <meta property="twitter:image"
+        content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
 </head>
+
 <body>
     <div class="headerback">
-        <a href="/" class="backbutton"><div>Back</div></a>
+        <a href="/" class="backbutton">
+            <div>Back</div>
+        </a>
         <h1 class="middle">Screen Adorner BETA</h1>
     </div>
     <br>
@@ -40,8 +46,10 @@
         <div class="step">
             <h2 class="middle">What is a screen adorner?</h2>
             <hr>
-            <p class="middle">Screen adorner allows you to display 1 frame on multiple parts, it's mostly used for GIFs</p>
-            <img style="width: 75%; margin: 10px auto; border-radius: 10px; display: block;" src="https://i.gyazo.com/49bc1005fe8e536d2279afc123fd0be6.gif" alt="example gif">
+            <p class="middle">Screen adorner allows you to display 1 frame on multiple parts, it's mostly used for GIFs
+            </p>
+            <img style="width: 75%; margin: 10px auto; border-radius: 10px; display: block;"
+                src="https://i.gyazo.com/49bc1005fe8e536d2279afc123fd0be6.gif" alt="example gif">
             <br>
         </div>
 
@@ -50,9 +58,16 @@
         <div class="step">
             <h2 class="middle">Download</h2>
             <hr>
-            <p class="middle">Download the model by clicking the button below, drag it onto an open place in Studio.<br>
-            You can also just copy the code from Github Gist and paste it into a ModuleScript</p>
-            <div class="downloadLinks"><a class="download" href="https://github.com/Gabys2005/Gabys2005.github.io/raw/master/adorner/adorner.rbxm"><div>Download</div></a><a target="_blank" class="download" href="https://gist.github.com/Gabys2005/ac873927ffff8eb4c0446f26ac47c812"><div>Github Gist</div></a></div>
+            <p class="middle">Click the button below to get redirected to Roblox's library page. Take the asset from
+                there and use the Toolbox in Studio to insert it into your game.<br>
+                You can also just copy the code from Github Gist and paste it into a ModuleScript</p>
+            <div class="downloadLinks"><a class="download"
+                    href="https://www.roblox.com/library/7482603358/Screen-Adorner">
+                    <div>Download</div>
+                </a><a target="_blank" class="download"
+                    href="https://gist.github.com/Gabys2005/ac873927ffff8eb4c0446f26ac47c812">
+                    <div>Github Gist</div>
+                </a></div>
         </div>
         <br>
         <div class="step">
@@ -60,11 +75,14 @@
             <hr>
             <p class="middle">The module has only 1 function - <span class="code">adorner:Adorn()</span><br><br>
                 The functions requires 3 parameters:</p>
-                <p style="margin-left: 75px">- <span class="code">Frame</span> - a frame to replicate on all the screens<br>
+            <p style="margin-left: 75px">- <span class="code">Frame</span> - a frame to replicate on all the screens<br>
                 - <span class="code">Screens</span> - a table of SurfaceGuis the frame should be on<br>
-                - <span class="code">TopMarker</span> - a Vector3 position of the very top of the screens (to calculate the height offset, just put it as <span class="code">part.Position</span>)</p>
-            <p class="middle">The Frame's size needs to be specified in pixels, if you use default SurfaceGui properties, then the size of the frame needs to be 50 times bigger than the size of the screens<br><br>
-                The SurfaceGuis need a <span class="code">XOffset</span> value with the X (left-right) offset of that screen in pixels</p>
+                - <span class="code">TopMarker</span> - a Vector3 position of the very top of the screens (to calculate
+                the height offset, just put it as <span class="code">part.Position</span>)</p>
+            <p class="middle">The Frame's size needs to be specified in pixels, if you use default SurfaceGui
+                properties, then the size of the frame needs to be 50 times bigger than the size of the screens<br><br>
+                The SurfaceGuis need a <span class="code">XOffset</span> value with the X (left-right) offset of that
+                screen in pixels</p>
             <pre><span class="local">local</span> adorner = <span class="func">require</span>(<span class="func">game</span>.ServerScriptService.ScreenAdorner)<br>
                 <br>
 <span class="local">local</span> surfaces = {<span class="func">workspace</span>.Screen1.SurfaceGui,<br>
@@ -73,31 +91,37 @@
 <br>
 adorner:Adorn(<span class="func">script</span>.Frame, surfaces, marker)<br></pre>
         </div>
-<br>
+        <br>
 
-<div class="step">
-    <h2 class="middle">Removing the frames</h2>
-    <hr>
-    <p class="middle">The <span class="code">Adorn()</span> function returns an object with a <span class="code">:Destroy()</span> function which will remove the frame from all screens</p>
-    <pre>... <span class="comment">// The stuff from above</span>
+        <div class="step">
+            <h2 class="middle">Removing the frames</h2>
+            <hr>
+            <p class="middle">The <span class="code">Adorn()</span> function returns an object with a <span
+                    class="code">:Destroy()</span> function which will remove the frame from all screens</p>
+            <pre>... <span class="comment">// The stuff from above</span>
     <br>
 <span class="local">local</span> adorned = adorner:Adorn(<span class="func">script</span>.Frame, surfaces, marker)<br>
 <span class="func">wait</span>(<span class="number">10</span>)<br>
 <span class="comment">// Remove the frames</span><br>
 adorned:Destroy()</pre>
-</div>
-<br>
+        </div>
+        <br>
 
-<div class="step">
-    <h2 class="middle">Example</h2>
-    <hr>
-    <p class="middle">Below is a download button for a Roblox place file with an example of how to use this module. It'll probably be more helpful than all the stuff above</p>
-    <a style="margin: 0 auto; display: block;" class="download" href="https://github.com/Gabys2005/Gabys2005.github.io/raw/master/adorner/ScreenAdornerExample.rbxl"><div>Download</div></a>
-    <br>
-</div>
-<br>
-    <br>
-   
+        <div class="step">
+            <h2 class="middle">Example</h2>
+            <hr>
+            <p class="middle">Below is a download button for a Roblox place file with an example of how to use this
+                module. It'll probably be more helpful than all the stuff above</p>
+            <a style="margin: 0 auto; display: block;" class="download"
+                href="https://github.com/Gabys2005/Gabys2005.github.io/raw/master/adorner/ScreenAdornerExample.rbxl">
+                <div>Download</div>
+            </a>
+            <br>
+        </div>
+        <br>
+        <br>
+
         <br>
 </body>
+
 </html>
