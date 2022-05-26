@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Host Gui</title>
+		<link rel="icon" type="image/png" href="/assets/logo.png" />
+		<link rel="stylesheet" href="/hostgui/style.css" />
+
+		<!-- Primary Meta Tags -->
+		<meta name="theme-color" content="#d1b130" />
+	</head>
+
+	<body>
+		<div class="headerback">
+			<a href="/" class="backbutton">
+				<div>Back</div>
+			</a>
+			<h1 class="middle">Host Gui</h1>
+		</div>
+		<br />
+		<h1 class="middle" id="install">How to use</h1>
+		<h2 class="middle videotutorial">*pls report bugs to me*</h2>
+		<div class="steps fadein">
+			<div class="step">
+				<h2 class="middle">Installation</h2>
+				<hr />
+				<p class="middle">
+					Click the button below to get redirected to Roblox's library page. Take the asset from there and use
+					the Toolbox in Studio to insert it into your game. Place the folder in ServerScriptService
+				</p>
+				<a class="download" target="_blank" href="https://www.roblox.com/library/9618770786">
+					<div>Roblox Library</div>
+				</a>
+			</div>
+
+			<br />
+
+			<div class="step">
+				<h2 class="middle">Basic usage</h2>
+				<hr />
+				<p class="middle">
+					Open the "Settings" script and insert your username into the "Whitelist" setting. When you join the
+					game, you should see an icon on the right side of your topbar. When you enable it, everything you
+					say should get shown on the host gui.
+				</p>
+			</div>
+
+			<br />
+
+			<div class="step">
+				<h2 class="middle">Name overrides</h2>
+				<hr />
+				<p class="middle">
+					By editing the "Names" setting, you can override the names that will appear in messages. By default
+					it changes "gabys2005" to "egg"
+				</p>
+			</div>
+
+			<br />
+
+			<div class="step">
+				<h2 class="middle">API</h2>
+				<hr />
+				<h3 class="middle">Using the api</h3>
+				<pre><span class="local">local</span> api = <span class="func">require</span>(<span class="func">game</span>.ServerScriptService.HostGui.Api)</pre>
+                <hr>
+                <h3 class="middle">Method: api:SendMessage()</h3>
+                <p class="middle">Arguments:
+                    <ul>
+                        <li>author: string - required - the username that will appear as the author</li>
+                        <li>message: string - required - the message that will appear </li>
+                        <li>ignoreNameOverrides: boolean - optional - if true, the api will ignore the "Names" setting, FALSE by default</li>
+						<li>filter: boolean - optional - if true, the api will filter the message before showing it, FALSE by default</li>
+						<li>filterUserId: number - required if filter is true - the UserId of the person that sent the message, used for filtering</li>
+                    </ul>
+                </p>
+				<p class="middle">Examples:</p>
+				<pre>api:SendMessage(<span class="string">"gabys2005"</span>, <span class="string">"hello"</span>)<br>
+				api:SendMessage(<span class="string">"gabys2005"</span>, <span class="string">"aaaa"</span>, <span class="func">true</span>)<br>
+				api:SendMessage(<span class="string">"DarticFernandez"</span>, <span class="string">"egg"</span>, <span class="func">false</span>, <span class="func">true</span>, <span class="number">242801959</span>)</pre>
+				<hr>
+				<h3 class="middle">Event: api.MessageSent</h3>
+				<p class="middle">Fired whenever a message is sent. Arguments passed on are the same as above</p>
+				<pre>api.MessageSent:Connect(<span class="func">function</span>(author,message,overrides,filter,filterId)<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="func">print</span>(author, <span class="string">"sent a message:"</span>, message, <span class="string">"with settings:"</span>, overrides, filter, filterId)<br>
+				<span class="func">end</span>)</pre>
+			</div>
+		</div>
+		<br />
+
+		<br />
+	</body>
+</html>
