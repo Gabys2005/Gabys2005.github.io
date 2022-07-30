@@ -51,10 +51,6 @@ body {
 	margin: 0 auto;
 }
 
-.redstep {
-	border: 2px solid coral;
-}
-
 .step p {
 	font-size: 20px;
 	margin-right: 20px;
@@ -156,29 +152,4 @@ a {
 	.step {
 		width: 99%;
 	}
-}
-
-table {
-	display: block;
-	width: 100%;
-	overflow-x: scroll;
-}
-
-table tr {
-	width: 100%;
-}
-
-table td,
-table th {
-	width: 50%;
-}
-
-table pre {
-	display: block;
-	width: 100%;
-	overflow-x: auto;
-}
-
-img {
-	border-radius: 5px;
 }
