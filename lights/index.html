@@ -23,24 +23,12 @@
 		<h1 class="middle" id="install">How to use</h1>
 		<h2 class="middle videotutorial">*pls report bugs to me*</h2>
 		<div class="steps fadein">
-			<div class="step redstep">
-				<h2 class="middle">! IMPORTANT !</h2>
-				<hr />
-				<p class="middle">
-					This is part of the release of GESC assets after it's cancellation. Due to how sudden it happened,
-					this might be unfinished/half-broken. Updates soon.
-				</p>
-			</div>
-
-			<br />
-
 			<div class="step">
 				<h2 class="middle">Download</h2>
 				<hr />
 				<p class="middle">
 					Click the button below to get redirected to Roblox's library page. Take the asset from there and use
-					the Toolbox in Studio to insert it into your game. Place the folder named "GLights" (that's inside
-					the main folder) in ReplicatedStorage. You can move the panels and lights out, but you don't have to
+					the Toolbox in Studio to insert it into your game.
 				</p>
 				<a class="download" target="_blank" href="https://www.roblox.com/library/9618802405">
 					<div>Download</div>
@@ -50,11 +38,31 @@
 			<br />
 
 			<div class="step">
-				<h2 class="middle">Simple explanation</h2>
+				<h2 class="middle">Infos</h2>
 				<hr />
 				<p class="middle">
-					You can have infinite lights per panel, infitite groups ("Fix2" the group is 2), etc etc etc. any
-					questions DM me. More info soon
+					You can have infinite lights per panel, as well as infitite groups ("Fix2" the group is 2, etc.).<br />
+					Each panel can control 2 separate groups of lights (of the same type).<br />
+					At this point in time the "Circle" cue is not implemented, I'll make it work soon.<br />
+					If you're planning to use the lights in a prop then make sure the "ClientSided" setting is set to
+					false<br />
+					I'm not gonna write out what every button does, just go experiment with the lights. A better
+					explanation of everything will hopefully come soon™️. If you have any questions you can DM me on
+					Discord Gabys2005#1691
+				</p>
+			</div>
+
+			<br />
+
+			<div class="step">
+				<h2 class="middle">Code Structure</h2>
+				<hr />
+				<p class="middle">
+					The code is split into 3 folders: "Core", "Cues" and "DefaultPanels".<br />
+					The "Core" folder contains code that performs the basic tasks, like On, Off, Color, etc. It's
+					required for the lights to work<br />
+					The "Cues" and "DefaultPanels" folders contain code for the cues and panels bundled with the lights,
+					they're not necessary for the lights to function.
 				</p>
 			</div>
 		</div>
