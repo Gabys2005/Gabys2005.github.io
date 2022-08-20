@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>StacyPilot</title>
+		<link rel="icon" type="image/png" href="/assets/logo.png" />
+		<link rel="stylesheet" href="/stacypilot/style.css" />
+
+		<!-- Primary Meta Tags -->
+		<meta name="theme-color" content="#d1b130" />
+	</head>
+
+	<body>
+		<div class="headerback">
+			<a href="/" class="backbutton">
+				<div>Back</div>
+			</a>
+			<h1 class="middle">StacyPilot BETA</h1>
+		</div>
+		<br />
+		<h1 class="middle" id="install">How to use</h1>
+		<h2 class="middle videotutorial">*pls report bugs to me*</h2>
+		<div class="steps fadein">
+			<div class="step">
+				<h2 class="middle">Installation</h2>
+				<hr />
+				<p class="middle">
+					Click the button below to get redirected to Roblox's library page. Take the asset from there and use
+					the Toolbox in Studio to insert it into your game. Add any additional add-ons you might want to use
+					in the "Addons" folder
+				</p>
+				<p class="middle">
+					You can also install the StacyPilot plugin which will help you skip manually inserting add-ons or
+					recordings.
+				</p>
+				<p class="middle">
+					If you're planning to record in Studio, make sure to enable Studio access to API services in game
+					settings. If you have any questions, bugs or feature requests, feel free to contact me on Discord:
+					Gabys2005#1691.
+				</p>
+				<div class="flex">
+					<a class="download" target="_blank" href="https://www.roblox.com/library/10657184583">
+						<div>StacyPilot Model</div>
+					</a>
+					<a class="download" target="_blank" href="https://www.roblox.com/library/10363696337">
+						<div>StacyPilot Plugin</div>
+					</a>
+				</div>
+			</div>
+
+			<br />
+
+			<div class="step">
+				<h2 class="middle">Recording</h2>
+				<hr />
+				<p class="middle">
+					To start recording, simply press the "Start" button on the panel. When you're finished press the
+					"Stop" button and wait a few seconds for everything to save. When filling out the recording name,
+					preferably you should only use letters and numbers, without spaces
+				</p>
+			</div>
+
+			<br />
+
+			<div class="step">
+				<h2 class="middle">Inserting a recording</h2>
+				<hr />
+				<p class="middle">
+					With the plugin: Open the plugin, put the recording name in the "Recording Name" field and press
+					Insert.
+				</p>
+				<p class="middle">
+					Without the plugin: Copy
+					<a href="https://gist.github.com/Gabys2005/967df15466197af1d24333f31cb227f1" target="_blank"
+						>this</a
+					>
+					code into the Command Bar (View -> Command Bar) insert the recording name
+					<code>import("HERE")</code> and press enter.
+				</p>
+				<p class="middle">
+					With both methods, if you want to display the recording on the default panels, you need to insert
+					it's name in the "RecordingNames" ModuleScript that's in the main StacyPilot folder. Just copy and
+					paste the example data and change it. This is done this way so you can combine multiple recordings
+					into one playback.
+				</p>
+			</div>
+
+			<br />
+
+			<div class="step">
+				<h2 class="middle">Add-ons</h2>
+				<hr />
+				<p class="middle">
+					By default StacyPilot doesn't record anything. If you want to record something, you need to add or
+					make an add-on for it. Add-ons don't have to be in the "Addons" folder, but it's a nice way to keep
+					your game organised.<br />
+					Below are some add-ons I made for my other projects.
+				</p>
+				<div class="flex">
+					<a class="download" target="_blank" href="https://www.roblox.com/library/10657161014">
+						<div>Cameras V5</div>
+					</a>
+					<a class="download" target="_blank" href="https://www.roblox.com/library/10657145801">
+						<div>Lyrics Controller</div>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<h1 class="middle" id="install">Creating add-ons</h1>
+
+		<div class="steps fadein">
+			<div class="step">
+				<h2 class="middle">The <code>Core</code> module</h2>
+				<hr />
+				<p class="middle">
+					The core module contains functions responsible for recording, replaying and firing events:
+				</p>
+				<p>
+					- <code>:StartRecording()</code> will start recording<br />
+					- <code>:StopRecording()</code> will stop the current recording<br />
+					- <code>:ChangeRecordingName(newName: string)</code> will change the name of the current/next
+					recording<br />
+					- <code>:IsRecording()</code> will return true if the core is currently recording<br />
+					- <code>:IsPlaying()</code> will return true if the core is currently replaying a recording<br />
+					- <code>:GetReplayData()</code> will return all data for the currently playing recording. Values
+					will be nil for pieces of data that have already been replayed
+				</p>
+				<p>
+					- <code>:Record(module_name, ...)</code> will record all the arguments passed to it as data for
+					"module_name". Currently StacyPilot can record: numbers, strings, booleans, Color3s and Vector3s
+					(with more coming soon™️).
+				</p>
+				<p>
+					- <code>:RegisterResponse(module_name, function)</code> will tell the core to run
+					<code>function</code> when replaying some data for <code>module_name</code>
+				</p>
+				<p>
+					- <code>:Play(...)</code> will start playback of recordings with names passed as parameters (for
+					example <code>:Play("recording1", "recording2")</code>)<br />
+					- <code>:StopPlaying()</code> will stop the current playback
+				</p>
+				<p>
+					- <code>.Events.PlaybackStarted(full_data)</code> is fired when replaying a recording, passes full
+					data for that recording<br />
+					- <code>.Events.PlaybackStopped()</code> is fired when replaying has stopped<br />
+					- <code>.Events.PlaybackTick(time_passed)</code> is fired every Heartbeat when replaying a
+					recording, passes the amount of seconds that have passed since the replaying started<br />
+					- <code>.Events.PlaybackTickWithData(time_passed, remaining_data)</code> is fired every Heartbeat
+					when replaying a recording, additionally passes the data that has not yet been replayed<br />
+					- <code>.Events.PlaybackData(this_data)</code> is fired whenever the core reaches a piece of data
+					and needs to run a function for it<br />
+					- <code>.Events.RecordingStarted</code> is fired when recording starts<br />
+					- <code>.Events.RecordingStopped</code> is fired when recording is stopped
+				</p>
+			</div>
+
+			<br />
+
+			<div class="step">
+				<h2 class="middle">The <code>Panels</code> module</h2>
+				<hr />
+				<p class="middle">
+					The panels module contains functions resposible for displaying a playback on the default panels:
+				</p>
+				<p>
+					- <code>:GetPixelsForTime(seconds: number)</code> allows you to get the amount of pixels the panels
+					expect for the amount of seconds passed. Useful for Positions and Sizes
+				</p>
+				<p>
+					-
+					<code>:AddTrack(symbol: string, color: Color3, display_order: number, auto_scroll: boolean)</code>
+					is used to add a Track to the Panel. There's a separator with a display order of 0, so anything with
+					higher display order will be below it
+				</p>
+				<p>
+					- <code>Track:PopulateWithData({{Duration: number, Text: string, Time: number}})</code> is used to
+					easily show data on a track, you don't need to use it
+				</p>
+				<p>
+					-
+					<code
+						>There are also some other Track functions that I'll document soon, you can look at the cameras
+						add-on to see them</code
+					>
+				</p>
+			</div>
+
+			<br />
+
+			<div class="step">
+				<h2 class="middle">Example</h2>
+				<hr />
+				<p class="middle">(Lyrics Controller add-on)</p>
+				<p class="middle">
+					An example will be shown HERE in the future, but in the meantime you can read it in
+					<a href="https://gist.github.com/Gabys2005/77d8c04d4c230ce2a709995d3dfe93ed" target="_blank"
+						>this Github Gist</a
+					>
+				</p>
+			</div>
+		</div>
+		<br />
+
+		<br />
+	</body>
+</html>
