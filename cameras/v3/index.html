@@ -1,107 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Cameras V3 - Gabys2005</title>
+		<link rel="icon" type="image/png" href="/assets/logo.png" />
+		<link rel="stylesheet" href="/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+			integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gabys2005</title>
-    <link rel="icon" type="image/png" href="/assets/logo.png">
-    <link rel="stylesheet" href="/cameras/style.css">
+	<body>
+		<header>
+			<a href="/cameras" class="backbutton"><i class="fa-solid fa-arrow-left"></i> Back</a>
+			<h1>Camera System v3 (old)</h1>
+		</header>
+		<br />
 
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="Gabys2005">
-    <meta name="description" content="Welcome to gabys.xyz!">
-    <meta name="theme-color" content="#d1b130">
+		<h1 id="install">Installation</h1>
+		<h2>
+			Note: V5 has been released, if you're planning to use my cameras, I suggest using V5
+			<a href="/CameraSystem">LINK</a>
+		</h2>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gabys.xyz/">
-    <meta property="og:title" content="Gabys2005">
-    <meta property="og:description" content="Welcome to gabys.xyz!">
-    <meta property="og:image"
-        content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
+		<div class="steps fadein">
+			<div class="step">
+				<h2>Step 1</h2>
+				<hr />
+				<p>First, press the download button below. Your browser should download "CameraSystemV3.rbxm".</p>
+				<div class="buttons">
+					<a href="/temporary_models/CameraSystemV3.rbxm">Download</a>
+				</div>
+			</div>
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://gabys.xyz/">
-    <meta property="twitter:title" content="Gabys2005">
-    <meta property="twitter:description" content="Welcome to gabys.xyz!">
-    <meta property="twitter:image"
-        content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
-</head>
+			<div class="step">
+				<h2>Step 2</h2>
+				<hr />
+				<p>
+					Open a place in Roblox Studio (where you want the cameras to be) and drag the file you downloaded
+					onto Studio.
+				</p>
+			</div>
 
-<body>
-    <div class="headerback">
-        <a href="/cameras" class="backbutton">
-            <div>Back</div>
-        </a>
-        <h1 class="middle">Camera System v3 (old)</h1>
-    </div>
-    <br>
-    <h1 class="middle" id="install">Installation</h1>
-    <h2 class="middle videotutorial">Note: V5 has been released, if you're planning to use my cameras, I suggest using
-        V5 <a href="/CameraSystem">LINK</a></h2>
-    <div class="steps fadein">
-        <div class="step">
-            <h2 class="middle">Step 1</h2>
-            <hr>
-            <p class="middle">First, press the download button below. Your browser should download
-                "CameraSystemV3.rbxm".</p>
-            <a class="download" href="/temporary_models/CameraSystemV3.rbxm">
-                <div>Download</div>
-            </a>
-        </div>
-        <br>
-        <div class="step">
-            <h2 class="middle">Step 2</h2>
-            <hr>
-            <p class="middle">Open a place in Roblox Studio (where you want the cameras to be) and drag the file you
-                downloaded onto Studio.</p>
-        </div>
-        <br>
-        <div class="step">
-            <h2 class="middle">Step 3</h2>
-            <hr>
-            <p class="middle">Change the settings <i>and commit the script if you're in team create</i>.</p>
-            <h2 class="middle" style="color:gold;"><b>DONE</b></h2>
-        </div>
-        <br><br>
-    </div>
+			<div class="step">
+				<h2>Step 3</h2>
+				<hr />
+				<p>Change the settings <i>and commit the script if you're in team create</i>.</p>
+				<h2 style="color: gold"><b>DONE</b></h2>
+			</div>
+		</div>
 
-    <br>
-    <h1 class="middle" id="move">Moving cameras from v2 to v3</h1>
-    <div class="steps fadein">
-        <div class="step">
-            <h2 class="middle">Step 1</h2>
-            <hr>
-            <p class="middle">Download the system from step 1 of the "Installation" section</p>
-        </div>
-        <br>
-        <div class="step">
-            <h2 class="middle">Step 2</h2>
-            <hr>
-            <p class="middle">Delete the <i>(old)</i> camera system parts from Lighting, ReplicatedStorage and
-                StarterGui and rename the old Workspace part to "CameraSystemOld"</p>
-        </div>
-        <br>
-        <div class="step">
-            <h2 class="middle">Step 3</h2>
-            <hr>
-            <p class="middle">Import (drag) the new camera system into Studio, delete the static/moving cam example and
-                default cam, copy the command from <a href="/temporary_models/MoveCommand.lua" target="_blank"
-                    style="color: lightcoral;">here</a> and paste it into the command bar (View >
-                Command Bar)</p>
-        </div>
-        <br>
-        <div class="step">
-            <h2 class="middle">Step 4</h2>
-            <hr>
-            <p class="middle">Delete "CameraSystemOld"</p>
-            <h2 class="middle" style="color:gold;"><b>DONE</b></h2>
-        </div>
-        <br><br>
-    </div>
-</body>
+		<br />
+		<h1 id="move">Moving cameras from v2 to v3</h1>
+		<div class="steps fadein">
+			<div class="step">
+				<h2>Step 1</h2>
+				<hr />
+				<p>Download the system from step 1 of the "Installation" section</p>
+			</div>
 
+			<div class="step">
+				<h2>Step 2</h2>
+				<hr />
+				<p>
+					Delete the <i>(old)</i> camera system parts from Lighting, ReplicatedStorage and StarterGui and
+					rename the old Workspace part to "CameraSystemOld"
+				</p>
+			</div>
+
+			<div class="step">
+				<h2>Step 3</h2>
+				<hr />
+				<p>
+					Import (drag) the new camera system into Studio, delete the static/moving cam example and default
+					cam, copy the command from
+					<a href="/temporary_models/MoveCommand.lua" target="_blank">here</a> and paste it into the command
+					bar (View > Command Bar)
+				</p>
+			</div>
+
+			<div class="step">
+				<h2>Step 4</h2>
+				<hr />
+				<p>Delete "CameraSystemOld"</p>
+				<h2 style="color: gold"><b>DONE</b></h2>
+			</div>
+			<br /><br />
+		</div>
+	</body>
 </html>

@@ -1,19 +1,231 @@
 body {
-    background-color: rgb(32,34,37);
-    color: #FFFFFF;
-    font-family: "Helvetica", "Verdana";
-    margin: 0 0 0 0;
+	background-color: rgb(32, 34, 37);
+	color: #ffffff;
+	font-family: "Helvetica", "Verdana", sans-serif;
+	margin: 0 0 0 0;
 }
 
-.headerback {
-    background-color: rgb(54,57,63);
-    padding-top: 15px;
-    padding-bottom: 10px;
-    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.2);
+header {
+	background-color: rgb(54, 57, 63);
+	padding-top: 15px;
+	padding-bottom: 10px;
+	box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	padding: 1rem;
 }
 
-.header {
-    text-align: center;
-    margin-left: 50px;
-    margin-right: 50px;
+a {
+	color: lightblue;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1,
+h2,
+p {
+	text-align: center;
+}
+
+p {
+	font-size: 110%;
+}
+
+.socials {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 2rem;
+}
+
+.buttons a,
+.backbutton,
+button {
+	background-color: rgb(47, 49, 54);
+	padding: 1rem;
+	margin: 0.25rem;
+	border-radius: 0.5rem;
+	margin-bottom: 0.5rem;
+	border: 0;
+	color: lightblue;
+	cursor: pointer;
+}
+
+.buttons a:hover,
+.backbutton:hover,
+button:hover {
+	text-decoration: none;
+	background-color: rgb(40, 40, 50);
+}
+
+.backbutton {
+	position: absolute;
+	top: 25px;
+	left: 1rem;
+}
+
+.projects,
+.steps {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 2rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.project,
+.step {
+	border: 2px solid lightblue;
+	border-radius: 15px;
+}
+
+.projects {
+	flex-direction: row;
+}
+
+.steps {
+	flex-direction: column;
+	align-content: center;
+}
+
+.project {
+	width: 460px;
+	height: 225px;
+	margin: 1.5rem;
+}
+
+.step {
+	width: 700px;
+	margin: 1rem;
+}
+
+.step p,
+.step h3 {
+	text-align: left;
+	padding: 0 1rem;
+}
+
+.project h1 {
+	text-align: center;
+	color: lightblue;
+}
+
+.project p {
+	text-align: center;
+	color: white;
+	height: 50px;
+	width: 440px;
+	margin-left: 10px;
+}
+
+.buttons {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+}
+
+hr {
+	border-color: lightblue;
+}
+
+.fadein {
+	animation: fadeIn 0.5s;
+}
+
+.button-padding {
+	padding: 1rem 3rem !important;
+}
+
+.local {
+	color: #f86d7c;
+}
+.func {
+	color: #84d6f7;
+}
+
+.number {
+	color: #ffc600;
+}
+.string {
+	color: #adf195;
+}
+.comment {
+	color: rgb(102, 102, 102);
+}
+
+.code {
+	background-color: rgb(25, 27, 29);
+	padding: 5px;
+	border-radius: 5px;
+	font-family: "Consolas", monospace;
+	font-size: 17px;
+}
+
+pre {
+	background-color: rgb(25, 27, 29);
+	padding: 5px;
+	border-radius: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 17px;
+	overflow: auto;
+	white-space: nowrap;
+}
+
+.small {
+	font-size: 80%;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@media (max-width: 550px) {
+	.socials {
+		flex-direction: column;
+	}
+	.socials p {
+		margin: 0;
+	}
+	.backbutton {
+		position: initial;
+		margin-top: 0.25rem;
+		width: 50%;
+		display: inline-block;
+	}
+
+	.project {
+		width: 100%;
+		height: auto;
+	}
+
+	.project p {
+		margin: 1rem auto;
+		width: 95%;
+		height: auto;
+	}
+}
+
+@media (max-width: 700px) {
+	.step {
+		width: 100%;
+		height: auto;
+	}
+
+	.step p,
+	.step h3 {
+		margin: 1rem auto;
+		width: 90%;
+	}
 }

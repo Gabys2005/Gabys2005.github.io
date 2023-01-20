@@ -1,96 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Cameras V4 - Gabys2005</title>
+		<link rel="icon" type="image/png" href="/assets/logo.png" />
+		<link rel="stylesheet" href="/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+			integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gabys2005</title>
-    <link rel="icon" type="image/png" href="/assets/logo.png">
-    <link rel="stylesheet" href="/cameras/style.css">
+	<body>
+		<header>
+			<a href="/cameras" class="backbutton"><i class="fa-solid fa-arrow-left"></i> Back</a>
+			<h1>Camera System v4 (old)</h1>
+		</header>
+		<br />
 
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="Gabys2005">
-    <meta name="description" content="Welcome to gabys.xyz!">
-    <meta name="theme-color" content="#d1b130">
+		<h2>
+			Note: V5 has been released, if you're planning to use my cameras, I suggest using V5
+			<a href="/CameraSystem">LINK</a>
+		</h2>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gabys.xyz/">
-    <meta property="og:title" content="Gabys2005">
-    <meta property="og:description" content="Welcome to gabys.xyz!">
-    <meta property="og:image"
-        content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
+		<div class="steps fadein">
+			<div class="step">
+				<h2>Installation</h2>
+				<hr />
+				<p>You can download the system from the Roblox library. The button below will take you there!</p>
+				<div class="buttons">
+					<a class="download" target="_blank" href="https://www.roblox.com/library/7482584058"> Download </a>
+				</div>
+				<p>Once in Studio, open the Toolbox and drag the cameras into your game.</p>
+				<p>Read the info script and change the settings (mainly the GuiOwners)</p>
+				<h2 style="color: gold"><b>DONE</b></h2>
+			</div>
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://gabys.xyz/">
-    <meta property="twitter:title" content="Gabys2005">
-    <meta property="twitter:description" content="Welcome to gabys.xyz!">
-    <meta property="twitter:image"
-        content="https://raw.githubusercontent.com/Gabys2005/Gabys2005.github.io/master/assets/meta.png">
-</head>
+			<div class="step">
+				<h2>Reporting bugs/requesting features</h2>
+				<hr />
+				<p>
+					If you found a bug or want a new feature added, first check if it's not already on
+					<a href="https://trello.com/b/kd0RES1n/camera-system-suggestions">THIS</a>
+					board, if it isn't then please DM me on Discord Gabys2005#1691
+				</p>
+			</div>
 
-<body>
-    <div class="headerback">
-        <a href="/cameras" class="backbutton">
-            <div>Back</div>
-        </a>
-        <h1 class="middle">Camera System v4</h1>
-    </div>
-    <br>
-    <h2 class="middle videotutorial">Note: V5 has been released, if you're planning to use my cameras, I suggest using
-        V5 <a href="/CameraSystem">LINK</a></h2>
-    <div class="steps fadein">
-        <div class="step">
-            <h2 class="middle">Installation</h2>
-            <hr>
-            <p class="middle">You can download the system from the Roblox library. The button below will take you there!
-            </p>
-            <a class="download" target="_blank" href="https://www.roblox.com/library/7482584058">
-                <div>Download</div>
-            </a>
-            <p class="middle">Once in Studio, open the Toolbox and drag the cameras into your game.</p>
-            <p class="middle">Read the info script and change the settings (mainly the GuiOwners)</p>
-            <h2 class="middle" style="color:gold;"><b>DONE</b></h2>
-        </div>
-        <br>
+			<div class="step">
+				<h2>Transfering previous versions into V4</h2>
+				<hr />
+				<p>
+					To transfer cameras made in the previous versions to V4, first rename your current CameraSystem
+					folder to CameraSystemOld, then insert V4 into the game, below press the button representing the
+					version that you are using, copy the script that comes up and paste it into the command bar in
+					Studio, at the end delete the CameraSystemOld folder
+				</p>
+				<div class="buttons">
+					<a target="_blank" class="button-padding" href="/temporary_models/TransferV2toV4.lua"> V2 </a>
+					<a target="_blank" class="button-padding" href="/temporary_models/TransferV3toV4.lua"> V3 </a>
+				</div>
+			</div>
 
-        <div class="step">
-            <h2 class="middle">Reporting bugs/requesting features</h2>
-            <hr>
-            <p class="middle">If you found a bug or want a new feature added, first check if it's not already on <a
-                    href="https://trello.com/b/kd0RES1n/camera-system-suggestions" style="color: lightcoral;">THIS</a>
-                board, if it isn't then please DM me on discord Gabys2005#1691</p>
-        </div>
-        <br>
-
-        <div class="step">
-            <h2 class="middle">Transfering previous versions into V4</h2>
-            <hr>
-            <p class="middle">To transfer cameras made in the previous versions to V4, first rename your current
-                CameraSystem folder to CameraSystemOld, then insert V4 into the game, below press the button
-                representing the version that you are using, copy the script that comes up and paste it into the command
-                bar in Studio, at the end delete the CameraSystemOld folder</p>
-            <div class="downloadLinks"><a target="_blank" class="multidownload"
-                    href="/temporary_models/TransferV2toV4.lua">
-                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                </a><a target="_blank" class="multidownload" href="/temporary_models/TransferV3toV4.lua">
-                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                </a></div>
-        </div>
-        <br>
-
-        <div class="step">
-            <h2 class="middle">Keybinds</h2>
-            <hr>
-            <p class="middle">V4 allows you to fully customise the keybinds you want to use.<br>
-                In settings, in the KeyBinds table you can add a new table for new keybinds<br>
-                In the <span class="code">Keys</span> entry specify the keys that should be pressed to trigger the
-                keybind<br>
-                In the <span class="code">Run</span> entry specify what action should be taken<br>
-                Below are all possible Run actions:</p>
-            <pre>{<span class="string">"FOV"</span>, fov, time} <span class="comment">for example</span> {<span class="string">"FOV"</span>, <span class="number">20</span>, <span class="number">5</span>} <span class="comment">will change the fov to 20 in 5 secs</span><br>
+			<div class="step">
+				<h2>Keybinds</h2>
+				<hr />
+				<p>
+					V4 allows you to fully customise the keybinds you want to use.<br />
+					In settings, in the KeyBinds table you can add a new table for new keybinds<br />
+					In the <span class="code">Keys</span> entry specify the keys that should be pressed to trigger the
+					keybind<br />
+					In the <span class="code">Run</span> entry specify what action should be taken<br />
+					Below are all possible Run actions:
+				</p>
+				<pre>{<span class="string">"FOV"</span>, fov, time} <span class="comment">for example</span> {<span class="string">"FOV"</span>, <span class="number">20</span>, <span class="number">5</span>} <span class="comment">will change the fov to 20 in 5 secs</span><br>
 {<span class="string">"Rainbow"</span>} <span class="comment">will toggle the rainbow effect</span><br>
 {<span class="string">"Blackout"</span>} <span class="comment">will toggle the blackout effect</span><br>
 {<span class="string">"Whiteout"</span>} <span class="comment">will toggle the whiteout effect</span><br>
@@ -101,22 +88,24 @@
 {<span class="string">"ChangeCam"</span>, type, id} <span class="comment">will change the camera to the given one, note that you can use the api:GetCamIdFromName() method to translate a name to an id, for example</span> {<span class="string">"ChangeCam"</span>, <span class="string">"Moving"</span>, api:GetCamIdFromName(<span class="string">"Moving"</span>, <span class="string">"Example"</span>)}<br>
 {<span class="string">"Macro"</span>, macro name, function name} <span class="comment">will run the given function from a given macro for example</span> {<span class="string">"Macro"</span>, <span class="string">"ZoomIn"</span>, <span class="string">"LeftClick"</span>}
             </pre>
-        </div>
-        <br>
+			</div>
 
-        <div class="step">
-            <h2 class="middle">Macros/API</h2>
-            <hr>
-            <p class="middle">Macros allow you to do multiple things using 1 button, they're normal functions that can
-                use the API<br>
-                To create a macro, simply add a new table to the Macros table in the settings, the new table has to
-                include a <span class="code">Name</span> entry which will be the name on the button<br>
-                You can also specify <span class="code">LeftClick</span> and <span class="code">RightClick</span>
-                functions which will run (on the server) when you left click or right click the button. Both functions
-                will be ran with a paramter representing the player that pressed the button</p>
-            <p>For a documentation of the API, click <a href="/cameras/v4/api" style="color: lightcoral;">HERE</a></p>
-            <p>Below is an example macro, which will show you a slider to zoom in when you left click the button</p>
-            <pre>{<br>
+			<div class="step">
+				<h2>Macros/API</h2>
+				<hr />
+				<p>
+					Macros allow you to do multiple things using 1 button, they're normal functions that can use the
+					API<br />
+					To create a macro, simply add a new table to the Macros table in the settings, the new table has to
+					include a <span class="code">Name</span> entry which will be the name on the button<br />
+					You can also specify <span class="code">LeftClick</span> and
+					<span class="code">RightClick</span> functions which will run (on the server) when you left click or
+					right click the button. Both functions will be ran with a paramter representing the player that
+					pressed the button
+				</p>
+				<p>For a documentation of the API, click <a href="/cameras/v4/api">HERE</a></p>
+				<p>Below is an example macro, which will show you a slider to zoom in when you left click the button</p>
+				<pre>{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;Name = <span class="string">"ZoomIn"</span>;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;LeftClick = <span class="func">function</span>(plr)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="local">local</span> currentFov = api:GetFov()<br>
@@ -126,25 +115,29 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="func">end</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="func">end</span>;<br>
 };</pre>
-        </div>
-        <br>
+			</div>
 
-        <div class="step">
-            <h2 class="middle">Source Code</h2>
-            <hr>
-            <p class="middle">Because v4 is auto-updating, the source code isn't included with the thing you download.
-                If you want to check it out, either get it in Roblox library, or download it from github</p>
-            <div class="downloadLinks"><a class="multidownload" target="_blank"
-                    href="https://www.roblox.com/library/6249508959/Cameras-V4-MainModule">
-                    <div>&nbsp;&nbsp;&nbsp;Roblox&nbsp;&nbsp;&nbsp;</div>
-                </a><a class="multidownload" href="/temporary_models/CameraSystemV4MainModule.rbxm">
-                    <div>Download</div>
-                </a></div>
-        </div>
-        <br>
+			<div class="step">
+				<h2>Source Code</h2>
+				<hr />
+				<p>
+					Because v4 is auto-updating, the source code isn't included with the thing you download. If you want
+					to check it out, either get it in Roblox library, or download it from github
+				</p>
+				<div class="buttons">
+					<a
+						class="multidownload"
+						target="_blank"
+						href="https://www.roblox.com/library/6249508959/Cameras-V4-MainModule"
+					>
+						Roblox
+					</a>
+					<a class="multidownload" href="/temporary_models/CameraSystemV4MainModule.rbxm"> Download </a>
+				</div>
+			</div>
+			<br />
 
-        <br>
-    </div>
-</body>
-
+			<br />
+		</div>
+	</body>
 </html>
