@@ -175,11 +175,14 @@ pre {
 	margin-right: 10px;
 	font-size: 17px;
 	overflow: auto;
-	white-space: nowrap;
 }
 
 .small {
 	font-size: 80%;
+}
+
+li {
+	line-height: 150%;
 }
 
 @keyframes fadeIn {

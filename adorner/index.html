@@ -14,6 +14,11 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css" />
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+		<script>
+			hljs.highlightAll();
+		</script>
 	</head>
 
 	<body>
@@ -47,19 +52,10 @@
 					You can also just copy the code from Github Gist and paste it into a ModuleScript
 				</p>
 				<div class="buttons">
-					<a
-						class="download"
-						target="_blank"
-						href="https://create.roblox.com/marketplace/asset/7482603358/Screen-Adorner"
-					>
-						<i class="fa-solid fa-link"></i> Download
+					<a target="_blank" href="https://create.roblox.com/marketplace/asset/7482603358/Screen-Adorner">
+						<i class="fa-solid fa-link"></i> Roblox Library
 					</a>
-					<a
-						target="_blank"
-						class="download"
-						target="_blank"
-						href="https://gist.github.com/Gabys2005/ac873927ffff8eb4c0446f26ac47c812"
-					>
+					<a target="_blank" href="https://gist.github.com/Gabys2005/ac873927ffff8eb4c0446f26ac47c812">
 						<i class="fa-brands fa-github"></i> Github Gist
 					</a>
 				</div>
@@ -70,27 +66,46 @@
 				<hr />
 				<p>
 					The module has only 1 function - <span class="code">adorner:Adorn()</span><br /><br />
-					The functions requires 3 parameters:
+					The functions requires 4 parameters:
 				</p>
-				<p style="margin-left: 75px">
-					- <span class="code">Frame</span> - a frame to replicate on all the screens<br />
-					- <span class="code">Screens</span> - a table of SurfaceGuis the frame should be on<br />
-					- <span class="code">TopMarker</span> - a Vector3 position of the very top of the screens (to
-					calculate the height offset, just put it as <span class="code">part.Position</span>)
-				</p>
+				<ul>
+					<li><span class="code">Frame</span> - The frame that will be replicated on all screens</li>
+					<li><span class="code">Screens</span> - A table of SurfaceGuis the frame will be copied to</li>
+					<li>
+						<span class="code">TopMarker</span> - A Vector3 or a number representing the very top of the
+						top-most screen
+					</li>
+					<li>
+						<span class="code">TotalFrameSize</span> - A UDim2 representing the size of all of frames
+						combined
+					</li>
+				</ul>
 				<p>
 					The Frame's size needs to be specified in pixels, if you use default SurfaceGui properties, then the
-					size of the frame needs to be 50 times bigger than the size of the screens<br /><br />
-					The SurfaceGuis need a <span class="code">XOffset</span> value with the X (left-right) offset of
-					that screen in pixels
+					size of the frame needs to be 50 times bigger than the size of the screens
 				</p>
-				<pre><span class="local">local</span> adorner = <span class="func">require</span>(<span class="func">game</span>.ServerScriptService.ScreenAdorner)<br>
-                <br>
-<span class="local">local</span> surfaces = {<span class="func">workspace</span>.Screen1.SurfaceGui,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="func">workspace</span>.Screen2.SurfaceGui}<br>
-<span class="local">local</span> marker = <span class="func">workspace</span>.Marker.Position<br>
-<br>
-adorner:Adorn(<span class="func">script</span>.Frame, surfaces, marker)<br></pre>
+				<p>
+					The SurfaceGuis need a <span class="code">XOffset</span> attribute with the X (left-right) offset of
+					that screen in pixels (distance from the left-most side of any screen to the left side of current
+					screen)
+				</p>
+				<p>
+					The SurfaceGuis can also optionally include a <span class="code">YOffset</span> property which tells
+					the adorner how far to offset that screen downwards (useful for screens that are on the floor)
+				</p>
+				<pre>
+					<code class="language-lua">
+local adorner = require(game.ServerScriptService.ScreenAdorner)
+
+local surfaces = {workspace.Screen1.SurfaceGui,
+		  workspace.Screen2.SurfaceGui}
+
+local marker = workspace.Marker.Position
+local totalSize = UDim2.fromOffset(1000, 300)
+
+adorner:Adorn(script.Frame, surfaces, marker, totalSize)
+					</code>
+				</pre>
 			</div>
 
 			<div class="step">
@@ -100,28 +115,42 @@ adorner:Adorn(<span class="func">script</span>.Frame, surfaces, marker)<br></pre
 					The <span class="code">Adorn()</span> function returns an object with a
 					<span class="code">:Destroy()</span> function which will remove the frame from all screens
 				</p>
-				<pre>... <span class="comment">// The stuff from above</span>
-    <br>
-<span class="local">local</span> adorned = adorner:Adorn(<span class="func">script</span>.Frame, surfaces, marker)<br>
-<span class="func">wait</span>(<span class="number">10</span>)<br>
-<span class="comment">// Remove the frames</span><br>
-adorned:Destroy()</pre>
+				<pre>
+					<code class="language-lua">
+... // The stuff from above
+
+local adorned = adorner:Adorn(script.Frame, surfaces, marker, totalSize)
+
+task.wait(10)
+
+adorned:Destroy()
+				</code>
+			</pre>
 			</div>
 			<br />
 
 			<div class="step">
-				<h2>Example</h2>
+				<h2>Examples</h2>
 				<hr />
 				<p>
-					Below is a download button for a Roblox place file with an example of how to use this module. It'll
-					probably be more helpful than all of the stuff above
+					Below are links to some examples which might be more helpful than all of the explanations above. You
+					can press the <i class="fa-solid fa-ellipsis"></i> button on a game's page to access the game in
+					Studio
+				</p>
+				<p>
+					The <span class="code">Offset + Sizing</span> example shows the process of calculating the offsets
+					for each screen and the final size
+				</p>
+				<p>
+					The <span class="code">GIFs</span> example shows how to use the adorner with other modules, for
+					example the the GIF Player
 				</p>
 				<div class="buttons">
-					<a
-						style="margin: 0 auto; display: block"
-						href="https://github.com/Gabys2005/Gabys2005.github.io/raw/master/adorner/ScreenAdornerExample.rbxl"
-					>
-						<i class="fa-solid fa-download"></i> Download
+					<a target="_blank" href="https://www.roblox.com/games/12224443622/Adorner-Example-Offset-Sizing">
+						<i class="fa-solid fa-link"></i> Offset + Sizing
+					</a>
+					<a href="https://www.roblox.com/games/12224542799/Adorner-Example-GIFs" target="_blank">
+						<i class="fa-solid fa-link"></i> GIFs
 					</a>
 				</div>
 				<br />
