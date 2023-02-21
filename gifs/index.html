@@ -216,6 +216,39 @@ gif:Play()</code>
 			</div>
 
 			<div class="step">
+				<h2>Effects</h2>
+				<hr />
+				<p>
+					You can set the <span class="code">Effect</span> setting to set up an effect when a GIF is being
+					shown and destroyed. Effects exist mainly for switching between GIFs on the same screen.
+				</p>
+				<p>
+					Currently only a <span class="code">Fade</span> effect is available, you can configure it with the
+					optional <span class="code">Time</span> and <span class="code">Blocking</span> settings.
+				</p>
+				<pre><code class="language-lua">local GIFPlayer = require(game.ServerScriptService.GIFPlayer)
+
+local gif = GIFPlayer.new({
+	Screen = workspace.Screen.SurfaceGui,
+	Image = "rbxassetid://3528512681",
+	FPS = 24,
+	FramesPerRow = 6,
+	Frames = 26,
+	Effect = {
+		Name = "Fade",
+		-- It'll take 0.25 seconds to fade between GIFs
+		Time = 0.25,
+		-- When this setting is set to true,
+		-- the code will yield when destroying a GIF
+		Blocking = false
+	}
+})
+
+gif:Play()
+				</code></pre>
+			</div>
+
+			<div class="step">
 				<h1>Example</h1>
 				<hr />
 				<p>
