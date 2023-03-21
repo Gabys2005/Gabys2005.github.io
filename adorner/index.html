@@ -151,6 +151,114 @@ adorned:Destroy()
 				</div>
 				<br />
 			</div>
+
+			<div class="step" id="tutorial">
+				<h2>Tutorial</h2>
+				<hr />
+				<p>
+					Let's use the adorner on the screens from the <span class="code">Offset + Sizing</span> example.
+					This is what we'll start with:
+				</p>
+				<a href="./tutorial_images/start.png" target="_blank" class="tutorial_img">
+					<img src="./tutorial_images/start.png" alt="" />
+				</a>
+				<p>
+					The screens are named <span class="code">Screen1</span>, <span class="code">Screen2</span> and
+					<span class="code">Screen3</span> respectively. Screens 1 and 3 are 12.5 studs in width, while the
+					2nd screen is 14.5 studs in width. The first screen is 20.5 studs high
+				</p>
+				<p>
+					First, let's add a <span class="code">SurfaceGui</span> to each screen so we can display stuff on
+					them. We're not going to change any properties here but if you might want to change
+					<span class="code">LightInfluence</span> to 0 to make the screen glow in the dark
+				</p>
+				<a href="./tutorial_images/screens.png" target="_blank" class="tutorial_img vertical">
+					<img src="./tutorial_images/screens.png" alt="" />
+				</a>
+				<p>
+					Now let's add a <span class="code">XOffset</span> attribute to each of the GUIs. This attribute will
+					tell the adorner how far to the right each screen is.
+				</p>
+				<a href="./tutorial_images/attribute.png" target="_blank" class="tutorial_img vertical">
+					<img src="./tutorial_images/attribute.png" alt="" />
+				</a>
+				<p>
+					Now that every screen has its own <span class="code">XOffset</span> attribute, we can start
+					calculating them. Note that the position is measured from the top left corner of a screen, not the
+					center. The attribute also uses pixels, not studs
+				</p>
+				<p>
+					The first screen is... the first screen, so it doesn't need to be offset. We'll keep the
+					<span class="code">XOffset</span> at 0
+				</p>
+				<p>
+					The second screen is moved to the right by the size of the first screen and the gap between them, so
+					the <span class="code">XOffset</span> should be
+					<span class="code">size_of_first_screen + gap</span>. The attribute uses pixels, and by default GUIs
+					have 50 pixels per stud, so the final result will need to be multiplied by 50. The screen is 12.5
+					studs in width and the gap between the screens is 1 stud, so the final
+					<span class="code">XOffset</span> for the second screen is
+					<span class="code">(12.5 + 1) * 50</span> which is 675.
+				</p>
+				<p>
+					The same logic applies to the third screen except this time there are 2 screens before it (and the
+					second one is bigger) so the <span class="code">XOffset</span> is
+					<span class="code">(12.5 + 1 + 14.5 + 1) * 50</span> which is 1450
+				</p>
+				<p>
+					After filling out the XOffsets, the screen setup is done. Now we need to write some code to actually
+					tell the adorner to show stuff on those screens.
+				</p>
+				<p>
+					Let's start by inserting the <span class="code">Adorner</span> module into
+					<span class="code">ServerScriptService</span>. Then let's make our own script which can be named
+					whatever you want. Let's also create a <span class="code">Frame</span> inside of the script. This
+					frame will be copied to all screens and you should use it as "The Screen". We'll give it a
+					<span class="code">Size</span> of <span class="code">1, 0, 1, 0</span> so it covers everything
+				</p>
+				<a href="./tutorial_images/scripts.png" target="_blank" class="tutorial_img vertical">
+					<img src="./tutorial_images/scripts.png" alt="" />
+				</a>
+				<p>
+					Let's open the script and write the code required for everything to function. First let's import the
+					adorner module so we can use it
+				</p>
+				<pre><code class="language-lua">local adorner = require(game.ServerScriptService.Adorner)</code></pre>
+				<p>
+					The adorner has 1 function, :Adorn() which takes 4 parameters. First we need to specify the frame
+					that is going to get copied onto the screens. In our case it's the frame that's inside the script,
+					so
+				</p>
+				<pre><code class="language-lua">adorner:Adorn(script.Frame)</code></pre>
+				<p>
+					We also need to specify the screens that the frame is going to get copied to. In our case it's the 3
+					screens in Workspace, so
+				</p>
+				<pre><code class="language-lua">adorner:Adorn(..., {workspace.Screen1.SurfaceGui, workspace.Screen2.SurfaceGui, workspace.Screen3.SurfaceGui})</code></pre>
+				<p>Then we need to specify the Y position of the top point of the screens. In our case it's 20.5, so</p>
+				<pre><code class="language-lua">adorner:Adorn(..., 20.5)</code></pre>
+				<p>
+					Finally, we need to specify the total size of all screens in pixels. For the X axis, we can just add
+					the 3rd screen's size to its XOffset to get that, so we end up with
+					<span class="code">1450 + 12.5 * 50</span> which is 2075. The first screen covers the entire Y axis
+					so we can multiply its Y size by 50 to get the total Y size which is 1025. Once we have both axes,
+					we can insert it into the script like so
+				</p>
+				<pre><code class="language-lua">adorner:Adorn(..., UDim2.fromOffset(2075, 1025))</code></pre>
+				<p>After splitting the code into a few lines, the entire script looks like this:</p>
+				<pre><code class="language-lua">local adorner = require(game.ServerScriptService.Adorner)
+
+adorner:Adorn(
+	script.Frame,
+	{ workspace.Screen1.SurfaceGui, workspace.Screen2.SurfaceGui, workspace.Screen3.SurfaceGui },
+	20.5,
+	UDim2.fromOffset(2075, 1025)
+)</code></pre>
+				<p>
+					And it's done! Everything that will be inserted into our frame will get automatically copied to all
+					screens
+				</p>
+			</div>
 		</div>
 		<br />
 		<br />

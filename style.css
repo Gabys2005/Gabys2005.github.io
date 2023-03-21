@@ -185,6 +185,20 @@ li {
 	line-height: 150%;
 }
 
+.tutorial_img {
+	display: flex;
+	justify-content: center;
+}
+
+.tutorial_img img {
+	width: 80%;
+	border-radius: 1rem;
+}
+
+.tutorial_img.vertical img {
+	width: 40%;
+}
+
 @keyframes fadeIn {
 	from {
 		opacity: 0;
@@ -229,6 +243,11 @@ li {
 	.step p,
 	.step h3 {
 		margin: 1rem auto;
+		width: 90%;
+	}
+
+	.tutorial_img img,
+	.tutorial_img.vertical img {
 		width: 90%;
 	}
 }
