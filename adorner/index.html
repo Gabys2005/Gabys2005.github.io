@@ -235,7 +235,11 @@ adorned:Destroy()
 					screens in Workspace, so
 				</p>
 				<pre><code class="language-lua">adorner:Adorn(..., {workspace.Screen1.SurfaceGui, workspace.Screen2.SurfaceGui, workspace.Screen3.SurfaceGui})</code></pre>
-				<p>Then we need to specify the Y position of the top point of the screens. In our case it's 20.5, so</p>
+				<p>
+					Then we need to specify the Y position of the top point of the screens. You can easily do that by
+					just placing a part so that its center is touching the top border of the top-most screen and reading
+					its Y position. In our case it's 20.5, so
+				</p>
 				<pre><code class="language-lua">adorner:Adorn(..., 20.5)</code></pre>
 				<p>
 					Finally, we need to specify the total size of all screens in pixels. For the X axis, we can just add
