@@ -14,6 +14,11 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css" />
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+		<script>
+			hljs.highlightAll();
+		</script>
 	</head>
 
 	<body>
@@ -21,17 +26,15 @@
 			<a href="/" class="backbutton"> <i class="fa-solid fa-arrow-left"></i> Back </a>
 			<h1>GLights</h1>
 		</header>
-		<br />
 
-		<h2>Please report bugs to me</h2>
-
-		<div class="steps fadein">
+		<div class="steps">
 			<div class="step">
 				<h2>Download</h2>
 				<hr />
 				<p>
 					Click the button below to get redirected to Roblox's library page. Take the asset from there and use
-					the Toolbox in Studio to insert it into your game.
+					the Toolbox in Studio to insert it into your game. Every panel has a "Settings" script inside of it,
+					make sure to check it out.
 				</p>
 				<div class="buttons">
 					<a
@@ -45,30 +48,118 @@
 			</div>
 
 			<div class="step">
-				<h2>Infos</h2>
+				<h2>The A and B group split</h2>
 				<hr />
 				<p>
-					You can have infinite lights per panel, as well as infitite groups ("Fix2" the group is 2, etc.).<br />
-					Each panel can control 2 separate groups of lights (of the same type).<br />
-					At this point in time the "Circle" cue is not implemented, I'll make it work soon.<br />
-					If you're planning to use the lights in a prop then make sure the "ClientSided" setting is set to
-					false<br />
-					I'm not gonna write out what every button does, just go experiment with the lights. A better
-					explanation of everything will hopefully come soon™️. If you have any questions you can DM me on
-					Discord Gabys2005#1691
+					A GLights panel can control 2 separate groups of lights at once to reduce the amount of panels
+					needed for less used lights. Both groups share the same settings. You can specify which light
+					folders are assigned to which group by changing the "Lights" setting (see below). You can enable or
+					disable the A and B groups by clicking the A and B buttons below the color selection
 				</p>
 			</div>
 
 			<div class="step">
-				<h2>Code Structure</h2>
+				<h2>Adding more light folders to a panel</h2>
+				<hr />
+				<ol>
+					<li>Open the Settings script in that panel</li>
+					<li>
+						Add more folder paths to the appropriate Lights setting. For example if you want the A group to
+						control the "Beams1" and "Beams2" folders then the setting would look similar to this:
+					</li>
+				</ol>
+				<pre><code class="language-lua">
+A = { script.Parent.Parent.Beams1, script.Parent.Parent.Beams2 }
+					</code></pre>
+			</div>
+
+			<div class="step">
+				<h2>Adding more panels</h2>
+				<hr />
+				<ol>
+					<li>Duplicate one of the panels</li>
+					<li>Open its "Settings" script and edit the Lights setting to include the new light folders</li>
+				</ol>
+				<p>
+					⚠️ Duplicating the entire GLights folder is technically possible, but it's not advised. There should
+					only be 1 folder with GLights scripts in your game (unless you're making a prop, check below)
+				</p>
+			</div>
+
+			<div class="step">
+				<h2>Using GLights in a prop</h2>
 				<hr />
 				<p>
-					The code is split into 3 folders: "Core", "Cues" and "DefaultPanels".<br />
-					The "Core" folder contains code that performs the basic tasks, like On, Off, Color, etc. It's
-					required for the lights to work<br />
-					The "Cues" and "DefaultPanels" folders contain code for the cues and panels bundled with the lights,
-					they're not necessary for the lights to function.
+					Make sure that the "ClientSided" setting on all panels is set to false and that you're using your
+					own folder with scripts. Other than that nothing special needs to be done
 				</p>
+			</div>
+
+			<div class="step">
+				<h2>Using GLights with StacyPilot</h2>
+				<hr />
+				<p>
+					You can install the official StacyPilot addon for GLights from the StacyPilot plugin or
+					<a href="https://gist.github.com/Gabys2005/8db2bd70698339cbb8a75aee6ffb79c6" target="_blank">
+						here </a
+					>. Make sure all panels have their "UniqueName" setting set to something different so StacyPilot can
+					differentiate between them
+				</p>
+				<p>
+					⚠️ Please note that the addon does <b>not</b> save starting state, which means that it doesn't know
+					what happened before the recording (the color of the lights, etc.). Make sure that they're in the
+					same state when you start recording and replaying. The easiest way to do that would be to right
+					click the Reset button on all panels.
+				</p>
+			</div>
+
+			<div class="step">
+				<h2>Questions / GLights don't work</h2>
+				<hr />
+				<p>
+					You can DM me on Discord: <span class="code">.gabys</span> with any questions you might have. Please
+					tell me the version of the GLights you're using (it's visible on the panels)
+				</p>
+				<p>
+					If the GLights do not work at all then make sure to check the Output window (<span class="code">
+						View -> Output
+					</span>
+					in Studio after running the game) for any errors, and send them to me if there are any
+				</p>
+			</div>
+
+			<div class="step">
+				<h2>Older versions</h2>
+				<hr />
+				<ul>
+					<li>
+						<a href="https://create.roblox.com/marketplace/asset/10499252462" target="_blank">GLights 3</a>
+					</li>
+					<li>
+						<a href="https://create.roblox.com/marketplace/asset/13847346093" target="_blank">GLights 4</a>
+					</li>
+					<li>GLights 0 - 2 are private</li>
+				</ul>
+			</div>
+
+			<div class="step">
+				<h2>Updating from GLights 4 to GLights 5</h2>
+				<hr />
+				<ol>
+					<li>Backup your game in case you do something wrong</li>
+					<li>Select the all folders with GLights</li>
+					<li>Double check that you selected the right folders</li>
+					<li>Open the command bar (<span class="code">View -> Command Bar</span>)</li>
+					<li>
+						Run the code from
+						<a href="https://gist.github.com/Gabys2005/eb15d87e2e725f0f9bdeda23e625c399" target="_blank">
+							this Github Gist
+						</a>
+						in the command bar to convert the light models
+					</li>
+					<li>Manually switch out the "GLights" folder in v4 with the "Scripts" folder in v5</li>
+					<li>Manually switch out the panels</li>
+				</ol>
 			</div>
 		</div>
 		<br />
