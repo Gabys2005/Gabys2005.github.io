@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100..900&display=swap");
+
 body {
 	background-color: rgb(32, 34, 37);
 	color: #ffffff;
@@ -249,5 +251,60 @@ li {
 	.tutorial_img img,
 	.tutorial_img.vertical img {
 		width: 90%;
+	}
+}
+
+.event {
+	background-color: #0f0f14;
+	padding: 1rem 0;
+	font-size: 150%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	font-family: Inter, sans-serif;
+}
+
+.event p {
+	width: 40%;
+	font-weight: bold;
+}
+
+.event a {
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 20px;
+	letter-spacing: -0.04em;
+	text-decoration: none;
+	background: #0055ff;
+	color: white;
+	border-radius: 8px;
+	padding: 10px 12px;
+	transform: scale(1.25);
+	margin-bottom: 1rem;
+	font-family: Barlow, sans-serif;
+}
+
+.iframe-container {
+	width: 40%;
+	aspect-ratio: 16/9;
+}
+
+iframe {
+	height: 100%;
+	width: 100%;
+}
+
+@media (max-width: 800px) {
+	.iframe-container,
+	.event p {
+		width: 100%;
+	}
+
+	.event {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+		font-size: 120%;
 	}
 }
