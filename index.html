@@ -4,9 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>Gabys2005</title>
+		<title>Gabys</title>
 		<link rel="icon" type="image/png" href="/assets/logo.png" />
-		<link rel="stylesheet" href="style.css" />
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -14,179 +13,124 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+					"three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"
+				}
+			}
+		</script>
+
+		<style>
+			* {
+				margin: 0;
+			}
+
+			html,
+			body {
+				height: 100%;
+				margin: 0;
+			}
+
+			body {
+				background: #8b632f;
+				color: white;
+				font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+					"Open Sans", "Helvetica Neue", sans-serif;
+				display: grid;
+				place-items: center;
+			}
+
+			.content {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				max-width: 800px;
+				gap: 1rem;
+			}
+
+			main {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+
+				background: rgb(141, 117, 80);
+				border-radius: 1rem;
+				padding: 1.5rem;
+				box-shadow: -2px 4px 20px 5px rgb(0 0 0 / 20%);
+			}
+
+			h1 {
+				margin-top: 0;
+			}
+
+			a {
+				color: lightblue;
+				text-decoration: none;
+			}
+
+			@media screen and (max-width: 800px) {
+				.content {
+					grid-template-columns: 1fr;
+				}
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+			.maincontent {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+			}
+
+			.links {
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+			}
+
+			aside {
+				display: flex;
+				justify-content: center;
+			}
+		</style>
 	</head>
 
 	<body>
-		<header>
-			<h1>Gabys</h1>
-			<div class="socials">
-				<p>
-					<i class="fa-brands fa-twitter"></i>
-					<a href="https://twitter.com/Gabys20005" target="_blank">@Gabys20005</a>
-				</p>
-				<p>
-					<i class="fa-brands fa-discord"></i> .gabys /
-					<a href="https://discord.gg/wD97cUgQ2Q" target="_blank">Gybasoft server</a>
-				</p>
-				<p>
-					<i class="fa-brands fa-mastodon"></i>
-					<a href="https://mas.to/@Gabys2005" target="_blank">@Gabys2005@mas.to</a>
-				</p>
+		<div class="content">
+			<div class="maincontent">
+				<main>
+					<p>
+						Looking for my projects? They've been moved to
+						<a href="https://gybasoft.dev">the new Gybasoft website</a>
+					</p>
+				</main>
+				<main>
+					<h1>Gabys</h1>
+					<div class="links">
+						<p>
+							<i class="fa-brands fa-twitter"></i>
+							<a href="https://twitter.com/Gabys20005" target="_blank">@Gabys20005</a>
+						</p>
+						<p>
+							<i class="fa-brands fa-discord"></i> .gabys /
+							<a href="https://discord.gg/wD97cUgQ2Q" target="_blank">Gybasoft server</a>
+						</p>
+					</div>
+					<hr />
+					<p>
+						<i class="fa-solid fa-link"></i>
+						<a href="https://gybasoft.dev" target="_blank">My projects</a>
+					</p>
+				</main>
 			</div>
-		</header>
-
-		<div class="event">
-			<p>
-				Tune in for exciting news and announcements from Gybasoft on 15&nbsp;September&nbsp;2024 at
-				5&nbsp;pm&nbsp;CEST.
-			</p>
-			<div class="iframe-container">
-				<iframe
-					width="560"
-					height="315"
-					src="https://www.youtube.com/embed/KRP44Adz4dM?si=mpKoX8Tw7yV2HUFK"
-					title="YouTube video player"
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					referrerpolicy="strict-origin-when-cross-origin"
-					allowfullscreen
-				></iframe>
-			</div>
+			<aside>
+				<canvas id="canvas"></canvas>
+			</aside>
 		</div>
-		<br />
-
-		<h2>My projects:</h2>
-
-		<div class="projects">
-			<div class="project fadein">
-				<h1>Camera System</h1>
-				<p>Camera System for Roblox Euro/Earthvisions (and probably more)</p>
-				<hr />
-				<div class="buttons">
-					<a href="/cameras/"><i class="fa-solid fa-link"></i> Website</a>
-					<a href="https://github.com/Gabys2005/CameraSystem"><i class="fa-brands fa-github"></i> Github</a>
-				</div>
-			</div>
-
-			<div class="project fadein">
-				<h1>GIF Module</h1>
-				<p>A module that allows you to play GIFs inside of Roblox using spritesheets</p>
-				<hr />
-				<div class="buttons">
-					<a href="/gifs"><i class="fa-solid fa-link"></i> Website</a>
-					<a href="https://gist.github.com/Gabys2005/8e5f4c0626061fd2d8b60065749ee05d">
-						<i class="fa-brands fa-github"></i> Github Gist
-					</a>
-				</div>
-			</div>
-
-			<div class="project fadein">
-				<h1>Televoting</h1>
-				<p>In-Game (Roblox) televoting that also allows you to save the votes to Excel</p>
-				<hr />
-				<div class="buttons">
-					<a href="/televoting"> <i class="fa-solid fa-link"></i> Website</a>
-				</div>
-			</div>
-
-			<div class="project fadein">
-				<h1>Scoreboards</h1>
-				<p>Eurovision-style scoreboards in Roblox. That's all I can say</p>
-				<hr />
-				<div class="buttons">
-					<a href="/boards"><i class="fa-solid fa-link"></i> Website</a>
-				</div>
-			</div>
-
-			<div class="project fadein">
-				<h1>Screen Adorner</h1>
-				<p>A module that allows you to easily put 1 Frame on mulitple surfaces</p>
-				<hr />
-				<div class="buttons">
-					<a href="/adorner"><i class="fa-solid fa-link"></i> Website</a>
-					<a href="https://gist.github.com/Gabys2005/ac873927ffff8eb4c0446f26ac47c812">
-						<i class="fa-brands fa-github"></i> Github Gist
-					</a>
-				</div>
-			</div>
-
-			<div class="project fadein">
-				<h1>Host Gui</h1>
-				<p>A nice and simple gui displaying the chat messages of your hosts</p>
-				<hr />
-				<div class="buttons">
-					<a href="/hostgui"><i class="fa-solid fa-link"></i> Website</a>
-				</div>
-			</div>
-
-			<div class="project fadein">
-				<h1>Clothes Giver</h1>
-				<p>A panel to manage your in-game clothes, mainly for RoESCs</p>
-				<hr />
-				<div class="buttons">
-					<a href="/clothesgiver"><i class="fa-solid fa-link"></i> Website</a>
-				</div>
-			</div>
-
-			<div class="project fadein">
-				<h1>GLights</h1>
-				<p>Some basic FREE lights because why not ❤️</p>
-				<hr />
-				<div class="buttons">
-					<a href="/lights"><i class="fa-solid fa-link"></i> Website</a>
-				</div>
-			</div>
-
-			<div class="project luaproject fadein">
-				<h1>Lyrics Controller</h1>
-				<p>Semi-Automatic lyrics controller for RoESC</p>
-				<hr />
-				<div class="buttons">
-					<a href="/lyrics"><i class="fa-solid fa-link"></i> Website</a>
-				</div>
-			</div>
-
-			<div class="project fadein">
-				<h1>Long Bubble Chat Panel</h1>
-				<p>A simple panel that allows you to select players who get extended bubble chat range</p>
-				<hr />
-				<div class="buttons">
-					<a href="/longbubble"><i class="fa-solid fa-link"></i> Website</a>
-				</div>
-			</div>
-
-			<div class="project fadein">
-				<h1>StacyPilot</h1>
-				<p>
-					StacyPilot allows you to record anything for your roesc to make it easier to control during the live
-					show
-				</p>
-				<hr />
-				<div class="buttons">
-					<a href="/stacypilot"><i class="fa-solid fa-link"></i> Website</a>
-				</div>
-			</div>
-
-			<div class="project fadein">
-				<h1>Online Voting</h1>
-				<p>
-					A website that allows you to set up jury and tele votings for your RoESC. It can also connect with
-					the in-game televoting
-				</p>
-				<hr />
-				<div class="buttons">
-					<a href="https://vote.gabys.xyz"><i class="fa-solid fa-link"></i> Website</a>
-				</div>
-			</div>
-
-			<div class="project fadein">
-				<h1>Plugins</h1>
-				<p>A few plugins for Roblox Studio</p>
-				<hr />
-				<div class="buttons">
-					<a href="/plugins"><i class="fa-solid fa-link"></i> Website</a>
-				</div>
-			</div>
-		</div>
+		<script src="egg.js" type="module"></script>
 	</body>
 </html>
