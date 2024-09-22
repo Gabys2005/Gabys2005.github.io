@@ -21,13 +21,13 @@ const loader = new OBJLoader();
 const mtlLoader = new MTLLoader();
 
 // load a resource
-mtlLoader.load("egg.mtl", function (material) {
+mtlLoader.load("/assets/egg.mtl", function (material) {
 	console.log(material.getAsArray()[0]);
 	material.getAsArray()[0].transparent = false;
 	loader.setMaterials(material);
 	loader.load(
 		// resource URL
-		"egg.obj",
+		"/assets/egg.obj",
 		// called when resource is loaded
 		function (object) {
 			egg = object;

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Redirecting...</title>
+	</head>
+	<body>
+		<iframe src="" frameborder="0" width="1000" height="600" id="iframe"></iframe>
+
+		<script>
+			let url = window.location.pathname.substring(1).toLowerCase();
+			if (url.endsWith("/")) {
+				url = url.substring(0, url.length - 1);
+			}
+			const redirects = {
+				adorner: "https://docs.gybasoft.dev/adorner",
+				boards: "https://docs.gybasoft.dev/boards",
+				"boards/sf": "https://docs.gybasoft.dev/boards/sf",
+				"boards/gf": "https://docs.gybasoft.dev/boards/gf",
+				"boards/allocation": "https://docs.gybasoft.dev/boards/allocation",
+				cameras: "https://docs.gybasoft.dev/cameras",
+				"cameras/v2": "https://docs.gybasoft.dev/cameras",
+				"cameras/v3": "https://docs.gybasoft.dev/cameras",
+				"cameras/v4": "https://docs.gybasoft.dev/cameras",
+				"cameras/v4/api": "https://docs.gybasoft.dev/cameras",
+				clothesgiver: "https://docs.gybasoft.dev/clothing",
+				customm: "https://docs.gybasoft.dev/hostgui",
+				hostgui: "https://docs.gybasoft.dev/hostgui",
+				gifs: "https://docs.gybasoft.dev/gifs",
+				lights: "https://docs.gybasoft.dev/glights",
+				lyrics: "https://docs.gybasoft.dev/lyrics",
+				plugins: "https://gybasoft.dev",
+				stacypilot: "https://docs.gybasoft.dev/stacypilot",
+				televoting: "https://docs.gybasoft.dev/televoting",
+				"televoting/api": "https://docs.gybasoft.dev/televoting",
+				docs: "https://docs.gybasoft.dev",
+				"docs/gifs": "https://docs.gybasoft.dev/gifs",
+				"docs/gifs/basic-screen-setup": "https://docs.gybasoft.dev/gifs/screen-setup",
+				"docs/gifs/basic-screen-setup/configuring":
+					"https://docs.gybasoft.dev/gifs/screen-setup/configuring-screens",
+				"docs/gifs/basic-screen-setup/inserting": "https://docs.gybasoft.dev/gifs/screen-setup/inserting",
+				"docs/gifs/basic-screen-setup/problems": "https://docs.gybasoft.dev/gifs/problems",
+				"docs/gifs/basic-screen-setup/uploading-gifs":
+					"https://docs.gybasoft.dev/gifs/screen-setup/uploading-gifs",
+				"docs/gifs/technical-explanation/basic": "https://docs.gybasoft.dev/gifs/technical/basic",
+				"docs/gifs/technical-explanation/effects": "https://docs.gybasoft.dev/gifs/technical/effects",
+				"docs/gifs/technical-explanation/example": "https://docs.gybasoft.dev/gifs/technical/example",
+				"docs/gifs/technical-explanation/generating-spritesheets":
+					"https://docs.gybasoft.dev/gifs/technical/generating-spritesheets",
+				"docs/gifs/technical-explanation/ids": "https://docs.gybasoft.dev/gifs/technical/ids",
+				"docs/gifs/technical-explanation/installation": "https://docs.gybasoft.dev/gifs/technical/installation",
+				"docs/gifs/technical-explanation/multiple-screens":
+					"https://docs.gybasoft.dev/gifs/technical/multiple-screens",
+				"docs/gifs/technical-explanation/multiple-spritesheets":
+					"https://docs.gybasoft.dev/gifs/technical/multiple-spritesheets",
+				"docs/gifs/technical-explanation/stopping-gifs-in-instance":
+					"https://docs.gybasoft.dev/gifs/technical/stopping-gifs-in-instance",
+				"docs/clothing": "https://docs.gybasoft.dev/clothing",
+				"docs/clothing/user-guide": "https://docs.gybasoft.dev/clothing/user-guide",
+				"docs/clothing/user-guide/changing-clothes":
+					"https://docs.gybasoft.dev/clothing/user-guide/changing-clothes",
+				"docs/clothing/user-guide/ids": "https://docs.gybasoft.dev/clothing/user-guide/ids",
+				"docs/clothing/user-guide/outfits": "https://docs.gybasoft.dev/clothing/user-guide/outfits",
+				"docs/clothing/developer-guide": "https://docs.gybasoft.dev/clothing/developer-guide",
+				"docs/clothing/developer-guide/installation":
+					"https://docs.gybasoft.dev/clothing/developer-guide/installation",
+				"docs/clothing/developer-guide/multiple-panels":
+					"https://docs.gybasoft.dev/clothing/developer-guide/multiple-panels",
+				"docs/clothing/developer-guide/problems": "https://docs.gybasoft.dev/clothing/developer-guide/problems",
+				"docs/clothing/developer-guide/security": "https://docs.gybasoft.dev/clothing/developer-guide/security",
+				camerasystem: "https://docs.gybasoft.dev/cameras",
+				"camerasystem/api": "https://docs.gybasoft.dev/cameras/api",
+				"camerasystem/basicinfo": "https://docs.gybasoft.dev/cameras/structure",
+				"camerasystem/cameracategories": "https://docs.gybasoft.dev/cameras/camera-types/#categories",
+				"camerasystem/camera-types/defaultcam": "https://docs.gybasoft.dev/cameras/camera-types",
+				"camerasystem/camera-types/drones": "https://docs.gybasoft.dev/cameras/camera-types/drones",
+				"camerasystem/camera-types/staticcams": "https://docs.gybasoft.dev/cameras/camera-types/static",
+				"camerasystem/camera-types/movingcams": "https://docs.gybasoft.dev/cameras/camera-types/moving",
+				"camerasystem/faq": "https://docs.gybasoft.dev/cameras/problems",
+				"camerasystem/focuspoints": "https://docs.gybasoft.dev/cameras/focus-points",
+				"camerasystem/keybinds": "https://docs.gybasoft.dev/cameras/keybinds",
+				"camerasystem/updating": "https://docs.gybasoft.dev/cameras/versions/old",
+			};
+
+			if (redirects[url]) {
+				window.location.replace(redirects[url]);
+			} else {
+				window.location.replace("https://gabys.xyz");
+			}
+		</script>
+	</body>
+</html>
